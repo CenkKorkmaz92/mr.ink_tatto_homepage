@@ -1,0 +1,151 @@
+import { Card } from "@/components/ui/card";
+
+const DataProtection = () => {
+  return (
+    <div className="min-h-screen py-16">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <Card className="p-8">
+          <h1 className="text-4xl font-bold mb-8 text-foreground">Data Protection Policy</h1>
+          
+          <div className="space-y-8 text-muted-foreground">
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Data Protection Overview</h2>
+              <p>
+                The following information provides an overview of what happens to your 
+                personal data when you visit our website. Personal data is any data that 
+                can be used to personally identify you.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">2. Data Controller</h2>
+              <div className="space-y-2">
+                <p><strong>Responsible party:</strong> Alex Rivera</p>
+                <p><strong>Address:</strong> 123 Artist Street, 10117 Berlin, Germany</p>
+                <p><strong>Phone:</strong> +49 30 123 456 789</p>
+                <p><strong>Email:</strong> privacy@tattoo-studio.com</p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">3. Data Collection on Our Website</h2>
+              
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Contact Forms</h3>
+                  <p>
+                    When you submit our contact form, we collect your name, surname, 
+                    and message content. This data is used solely to respond to your 
+                    inquiry and is stored securely.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Cookies</h3>
+                  <p>
+                    Our website uses cookies to improve user experience. These are small 
+                    text files stored on your device. You can configure your browser to 
+                    refuse cookies or to alert you when cookies are being sent.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Server Log Files</h3>
+                  <p>
+                    Our hosting provider automatically collects information in server 
+                    log files, including your browser type, operating system, referrer 
+                    URL, IP address, date and time of access.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">4. Your Rights</h2>
+              <div className="space-y-2">
+                <p><strong>Right to Information:</strong> You have the right to receive information about your stored personal data.</p>
+                <p><strong>Right to Correction:</strong> You have the right to correct inaccurate personal data.</p>
+                <p><strong>Right to Deletion:</strong> You have the right to request deletion of your personal data.</p>
+                <p><strong>Right to Data Portability:</strong> You have the right to receive your data in a structured format.</p>
+                <p><strong>Right to Object:</strong> You have the right to object to data processing for direct marketing purposes.</p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">5. Data Retention</h2>
+              <p>
+                We store your personal data only as long as necessary for the purposes 
+                for which it was collected or as required by law. Contact form submissions 
+                are typically deleted after 2 years unless ongoing communication requires 
+                longer retention.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">6. Third-Party Services</h2>
+              
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Google Maps</h3>
+                  <p>
+                    Our website uses Google Maps to display our location. When you interact 
+                    with the map, data may be transmitted to Google. Please refer to Google's 
+                    privacy policy for more information.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Social Media</h3>
+                  <p>
+                    Our website contains links to Facebook and Instagram. These links do not 
+                    automatically transfer data, but clicking them will redirect you to these 
+                    platforms where their privacy policies apply.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">7. Data Security</h2>
+              <p>
+                We use appropriate technical and organizational measures to protect your 
+                personal data against unauthorized access, alteration, disclosure, or 
+                destruction. Our website uses SSL/TLS encryption for secure data transmission.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">8. Changes to This Policy</h2>
+              <p>
+                We may update this privacy policy from time to time. The current version 
+                is always available on this page. We encourage you to review this policy 
+                periodically for any changes.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Contact</h2>
+              <p>
+                If you have any questions about this privacy policy or your personal data, 
+                please contact us at privacy@tattoo-studio.com or use the contact information 
+                provided in section 2.
+              </p>
+            </section>
+
+            <section className="pt-8 border-t border-border">
+              <p className="text-sm">
+                Last updated: {new Date().toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}
+              </p>
+            </section>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default DataProtection;
