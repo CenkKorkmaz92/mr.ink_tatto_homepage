@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "home": "Home",
+    "pircing": "Piercing",
+    "gallery": "Gallery",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Artful Tattoos & Piercings",
+      "subtitle": "Transform your vision into stunning body art at Nürtingen's premier tattoo & piercing studio",
+      "cta": "Book Appointment"
+    },
+    "studioTitle": "Our Studio"
+  },
+  "pircing": {
+    "title": "Mrs. Steel - Piercing Specialist",
+    "intro": "Experience professional piercing artistry with the highest safety and hygiene standards.",
+    "about": {
+      "title": "About Mrs. Steel",
+      "description": "Selina 'Mrs. Steel' Riss is the piercing specialist at Mr. Ink Tattoo. She values individual consultation and ensures every client feels comfortable and safe.",
+      "description2": "With comprehensive training in piercing techniques and anatomy, Mrs. Steel finds the perfect piercing for each client. From classic ear piercings to body piercings – quality and safety come first."
+    },
+    "services": {
+      "title": "Our Piercing Services",
+      "ear": "Ear Piercings",
+      "earDesc": "Lobe, Helix, Tragus, Daith and more",
+      "facial": "Facial Piercings",
+      "facialDesc": "Nose, Eyebrow, Lip and more",
+      "body": "Body Piercings",
+      "bodyDesc": "Navel, Dermal Anchors and more"
+    },
+    "standards": {
+      "title": "Our Standards",
+      "quality": "Premium Materials",
+      "qualityDesc": "Only high-quality, biocompatible materials",
+      "sterile": "Sterile Environment",
+      "sterileDesc": "Strict hygiene protocols for your safety",
+      "care": "Aftercare Support",
+      "careDesc": "Comprehensive guidance for optimal healing"
+    },
+    "portfolio": "Portfolio Gallery",
+    "portfolioDesc": "Here you can see various works by Mrs. Steel in different piercing styles.",
+    "cta": {
+      "title": "Ready for a New Piercing?",
+      "subtitle": "Book an appointment for a personal consultation",
+      "button": "Book Appointment"
+    }
+  },
+  "gallery": {
+    "title": "Portfolio",
+    "subtitle": "Explore our latest tattoo creations",
+    "all": "All",
+    "blackAndGrey": "Black & Grey",
+    "color": "Color",
+    "realism": "Realism",
+    "traditional": "Traditional",
+    "ourPortfolio": "Our Portfolio",
+    "portfolioDesc": "Dive into our collection of unique tattoos. Each artwork tells a story and showcases our artists' mastery."
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the talented artists behind Mr. Ink Tattoo",
+    "maxRole": "Owner Mr. Ink Tattoo",
+    "maxBio": "Max is the owner of Mr. Ink Tattoo in Nürtingen. With his feel for current trends and an eye for aesthetics, he creates individual tattoos – whether classic motifs or modern styles. His precision and passion for custom artwork define his work. Outside the studio, Max is a family man.",
+    "selinaRole": "Mrs. Steel - Piercing Specialist",
+    "selinaBio": "Selina 'Mrs. Steel' Riss handles all piercings at Mr. Ink Tattoo. With comprehensive training in anatomy and hygiene, she ensures safe and beautiful results."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to start your tattoo journey? Get in touch today!",
+    "form": {
+      "name": "First Name",
+      "surname": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "description": "Description",
+      "send": "Send Message",
+      "sendMessage": "Send Message",
+      "required": "required",
+      "nameRequired": "First name is required",
+      "surnameRequired": "Last name is required",
+      "descRequired": "Description is required",
+      "descMinLength": "Description must be at least 10 characters",
+      "messageSent": "Message Sent!",
+      "thankYou": "Thank you for your inquiry. We'll get back to you soon."
+    },
+    "owner": "Studio Owner",
+    "hours": {
+      "title": "Opening Hours",
+      "tuesday": "Tuesday - Friday: 11:00 - 19:00",
+      "saturday": "Saturday: 10:00 - 16:00",
+      "closed": "Monday & Sunday: Closed",
+      "note": "Appointments recommended. Walk-ins welcome based on availability."
+    },
+    "expect": {
+      "title": "What to Expect",
+      "consultation": "Free consultation to discuss your ideas",
+      "custom": "Custom design process tailored to you",
+      "sterile": "Sterile, professional environment",
+      "aftercare": "Comprehensive aftercare guidance"
+    },
+    "location": "Our Location"
+  },
+  "footer": {
+    "tagline": "Nürtingen's premier tattoo & piercing studio",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved."
+  },
+  "hero": {
+    "title": "Professional Tattoo Art",
+    "subtitle": "Expert artists, premium quality, unforgettable results"
+  },
+  "galleryInfo": {
+    "title": "Our Portfolio",
+    "description": "Each piece in our gallery represents hours of careful planning, artistic skill, and collaborative work with our clients. From small, delicate designs to large, complex compositions, we pride ourselves on delivering exceptional quality and bringing our clients' visions to life.",
+    "noResults": "No images found in this category.",
+    "bookConsultation": "Book Consultation",
+    "viewPricing": "View Pricing"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+}

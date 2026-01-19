@@ -115,4 +115,26 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Text Selection Styles */
+  ::selection {
+    background-color: hsl(45 85% 65%);
+    color: hsl(220 13% 12%);
+  }
+
+  ::-moz-selection {
+    background-color: hsl(45 85% 65%);
+    color: hsl(220 13% 12%);
+  }
+
+  /* Pricing Page Selection */
+  .bg-golden ::selection {
+    background-color: hsl(220 13% 18%);
+    color: hsl(0 0% 100%);
+  }
+
+  .bg-golden ::-moz-selection {
+    background-color: hsl(220 13% 18%);
+    color: hsl(0 0% 100%);
+  }
 }

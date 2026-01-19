@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import hero1 from "@/assets/hero-1.jpg";
@@ -16,6 +17,7 @@ const images = [
 ];
 
 const ImageCarousel = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -94,8 +96,8 @@ const ImageCarousel = () => {
       {/* Overlay Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Professional Tattoo Art</h1>
-          <p className="text-xl md:text-2xl text-white/90">Expert artists, premium quality, unforgettable results</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">{t('hero.title')}</h1>
+          <p className="text-xl md:text-2xl text-white/90">{t('hero.subtitle')}</p>
         </div>
       </div>
     </div>

@@ -1,19 +1,21 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import galleryPreview from "@/assets/gallery-preview.jpg";
-import artistMain from "@/assets/artist-main.jpg";
+import profileMrInk from "@/assets/profile_mrInk.webp";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 
 // Sample gallery with different categories
 const galleryCategories = [
-  { id: "all", name: "All Work" },
-  { id: "realistic", name: "Realistic" },
-  { id: "traditional", name: "Traditional" },
-  { id: "geometric", name: "Geometric" },
-  { id: "botanical", name: "Botanical" }
+  { id: "all", name: "all" },
+  { id: "realistic", name: "realism" },
+  { id: "traditional", name: "traditional" },
+  { id: "blackAndGrey", name: "blackAndGrey" },
+  { id: "color", name: "color" }
 ];
 
 const galleryImages = [
@@ -24,7 +26,7 @@ const galleryImages = [
     description: "Detailed realistic portrait work"
   },
   { 
-    src: artistMain, 
+    src: profileMrInk, 
     alt: "Traditional Design", 
     category: "traditional",
     description: "Classic traditional tattoo style"
@@ -48,7 +50,7 @@ const galleryImages = [
     description: "Custom artistic piece"
   },
   { 
-    src: artistMain, 
+    src: profileMrInk, 
     alt: "Traditional Eagle", 
     category: "traditional",
     description: "Bold traditional eagle"
@@ -68,6 +70,7 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -86,9 +89,9 @@ const Gallery = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Tattoo Gallery</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{t('gallery.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our collection of completed works showcasing various styles and techniques
+            {t('gallery.subtitle')}
           </p>
         </div>
 
@@ -101,7 +104,7 @@ const Gallery = () => {
               onClick={() => setActiveCategory(category.id)}
               className="transition-all duration-300"
             >
-              {category.name}
+              {t(`gallery.${category.name}`)}
             </Button>
           ))}
         </div>
@@ -134,26 +137,22 @@ const Gallery = () => {
         {/* No Results */}
         {filteredImages.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-xl text-muted-foreground">No images found in this category.</p>
+            <p className="text-xl text-muted-foreground">{t('galleryInfo.noResults')}</p>
           </div>
         )}
 
         {/* Gallery Info */}
         <div className="mt-16 text-center">
           <Card className="max-w-2xl mx-auto p-8">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Our Portfolio</h2>
+            <h2 className="text-2xl font-bold mb-4 text-foreground">{t('galleryInfo.title')}</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Each piece in our gallery represents hours of careful planning, artistic skill, 
-              and collaborative work with our clients. From small, delicate designs to large, 
-              complex compositions, we pride ourselves on delivering exceptional quality and 
-              bringing our clients' visions to life.
+              {t('galleryInfo.description')}
             </p>
             <div className="mt-6">
-              <Button size="lg" className="mr-4">
-                Book Consultation
-              </Button>
-              <Button variant="outline" size="lg">
-                View Pricing
+              <Button size="lg" asChild>
+                <Link to="/contact">
+                  {t('galleryInfo.bookConsultation')}
+                </Link>
               </Button>
             </div>
           </Card>

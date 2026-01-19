@@ -1,21 +1,33 @@
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.jpg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const Header = () => {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isPricingPage = location.pathname === "/pricing" || location.pathname === "/price-gallery";
+  const isPricingPage = location.pathname === "/pircing";
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Team", path: "/team" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Price Gallery", path: "/price-gallery" },
-    { name: "Contact", path: "/contact" },
+    { name: t('nav.home'), path: "/" },
+    { name: t('nav.pircing'), path: "/pircing" },
+    { name: t('nav.gallery'), path: "/gallery" },
+    { name: t('nav.team'), path: "/team" },
+    { name: t('nav.contact'), path: "/contact" },
   ];
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className={`sticky top-0 z-50 backdrop-blur border-b ${
@@ -26,17 +38,20 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold ${
-              isPricingPage 
-                ? "bg-golden-foreground text-golden" 
-                : "bg-accent text-accent-foreground"
+          <Link to="/" className="flex items-center space-x-2 group">
+            <img 
+              src={logo} 
+              alt="Mr. Ink Tattoo Logo" 
+              className="h-10 w-auto object-contain rounded-2xl border-[0.5px] border-yellow-500 opacity-90 hover:opacity-100 transition-opacity duration-300"
+            />
+            <span className={`text-xl font-bold relative transition-colors ${
+              isPricingPage ? "text-golden-foreground hover:text-golden-foreground" : "text-foreground hover:text-yellow-500"
             }`}>
-              TS
-            </div>
-            <span className={`text-xl font-bold ${
-              isPricingPage ? "text-golden-foreground" : "text-foreground"
-            }`}>Tattoo Studio</span>
+              Mr.Ink Tattoo
+              <span className={`absolute bottom-0 left-0 h-[0.5px] w-full group-hover:w-full transition-all duration-300 ${
+                isPricingPage ? "bg-golden-foreground" : "bg-yellow-500"
+              }`}></span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,14 +60,14 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base font-medium transition-colors relative group ${
                   isPricingPage
                     ? `hover:text-golden-foreground ${
                         location.pathname === item.path
                           ? "text-golden-foreground"
                           : "text-golden-foreground/70"
                       }`
-                    : `hover:text-accent ${
+                    : `hover:text-yellow-500 ${
                         location.pathname === item.path
                           ? "text-accent"
                           : "text-muted-foreground"
@@ -60,8 +75,28 @@ const Header = () => {
                 }`}
               >
                 {item.name}
+                <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                  isPricingPage ? "bg-golden-foreground" : "bg-yellow-500"
+                } ${
+                  location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
               </Link>
             ))}
+            
+            {/* Language Switcher */}
+            <div className="flex items-center space-x-2">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className={isPricingPage ? "text-golden-foreground hover:text-golden-foreground" : ""}
+                onClick={() => changeLanguage(i18n.language === 'de' ? 'en' : 'de')}
+              >
+                <Languages size={20} />
+              </Button>
+              <span className={`text-sm font-medium ${isPricingPage ? "text-golden-foreground" : "text-foreground"}`}>
+                {i18n.language.toUpperCase()}
+              </span>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -102,6 +137,22 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Mobile Language Switcher */}
+            <div className="pt-2 mt-2 border-t border-border">
+              <button
+                onClick={() => changeLanguage('de')}
+                className="block py-2 text-sm font-medium w-full text-left"
+              >
+                Deutsch
+              </button>
+              <button
+                onClick={() => changeLanguage('en')}
+                className="block py-2 text-sm font-medium w-full text-left"
+              >
+                English
+              </button>
+            </div>
           </nav>
         )}
       </div>

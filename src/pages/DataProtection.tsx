@@ -13,17 +13,18 @@ const DataProtection = () => {
               <p>
                 The following information provides an overview of what happens to your 
                 personal data when you visit our website. Personal data is any data that 
-                can be used to personally identify you.
+                can be used to personally identify you. This privacy policy complies with 
+                the EU General Data Protection Regulation (GDPR) and the German Federal Data Protection Act (BDSG).
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-foreground">2. Data Controller</h2>
               <div className="space-y-2">
-                <p><strong>Responsible party:</strong> Alex Rivera</p>
-                <p><strong>Address:</strong> 123 Artist Street, 10117 Berlin, Germany</p>
-                <p><strong>Phone:</strong> +49 30 123 456 789</p>
-                <p><strong>Email:</strong> privacy@tattoo-studio.com</p>
+                <p><strong>Responsible party:</strong> Max Riss</p>
+                <p><strong>Address:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
+                <p><strong>Phone:</strong> 01573 3360210</p>
+                <p><strong>Email:</strong> info@mrink-studio.de</p>
               </div>
             </section>
 
@@ -61,13 +62,14 @@ const DataProtection = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">4. Your Rights</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">4. Your Rights under GDPR</h2>
               <div className="space-y-2">
-                <p><strong>Right to Information:</strong> You have the right to receive information about your stored personal data.</p>
-                <p><strong>Right to Correction:</strong> You have the right to correct inaccurate personal data.</p>
-                <p><strong>Right to Deletion:</strong> You have the right to request deletion of your personal data.</p>
-                <p><strong>Right to Data Portability:</strong> You have the right to receive your data in a structured format.</p>
-                <p><strong>Right to Object:</strong> You have the right to object to data processing for direct marketing purposes.</p>
+                <p><strong>Right to Information (Art. 15 GDPR):</strong> You have the right to receive information about your stored personal data.</p>
+                <p><strong>Right to Correction (Art. 16 GDPR):</strong> You have the right to correct inaccurate personal data.</p>
+                <p><strong>Right to Deletion (Art. 17 GDPR):</strong> You have the right to request deletion of your personal data.</p>
+                <p><strong>Right to Data Portability (Art. 20 GDPR):</strong> You have the right to receive your data in a structured, commonly used format.</p>
+                <p><strong>Right to Object (Art. 21 GDPR):</strong> You have the right to object to data processing for direct marketing purposes.</p>
+                <p><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with a supervisory authority (Landesdatenschutzbeauftragte/r Baden-Württemberg).</p>
               </div>
             </section>
 
@@ -127,7 +129,7 @@ const DataProtection = () => {
               <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Contact</h2>
               <p>
                 If you have any questions about this privacy policy or your personal data, 
-                please contact us at privacy@tattoo-studio.com or use the contact information 
+                please contact us at info@mrink-studio.de or use the contact information 
                 provided in section 2.
               </p>
             </section>

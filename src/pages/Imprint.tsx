@@ -11,12 +11,11 @@ const Imprint = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-foreground">Business Information</h2>
               <div className="space-y-2">
-                <p><strong>Company:</strong> Tattoo Studio Professional Art</p>
-                <p><strong>Owner:</strong> Alex Rivera</p>
-                <p><strong>Address:</strong> 123 Artist Street<br />Creative District<br />10117 Berlin, Germany</p>
-                <p><strong>Phone:</strong> +49 30 123 456 789</p>
-                <p><strong>Email:</strong> info@tattoo-studio.com</p>
-                <p><strong>Website:</strong> www.tattoo-studio.com</p>
+                <p><strong>Company:</strong> Mr. Ink Tattoo</p>
+                <p><strong>Owner:</strong> Max Riss</p>
+                <p><strong>Address:</strong> Neuffener Str. 66<br />72622 Nürtingen, Germany</p>
+                <p><strong>Phone:</strong> 01573 3360210</p>
+                <p><strong>Email:</strong> info@mrink-studio.de</p>
               </div>
             </section>
 
@@ -24,7 +23,7 @@ const Imprint = () => {
               <h2 className="text-2xl font-semibold mb-4 text-foreground">Business Registration</h2>
               <div className="space-y-2">
                 <p><strong>Trade Registry:</strong> HRB 123456</p>
-                <p><strong>Registration Court:</strong> Amtsgericht Berlin-Charlottenburg</p>
+                <p><strong>Registration Court:</strong> Amtsgericht Stuttgart</p>
                 <p><strong>VAT ID:</strong> DE123456789</p>
                 <p><strong>Tax Number:</strong> 12/345/67890</p>
               </div>
@@ -33,17 +32,17 @@ const Imprint = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-foreground">Professional Licensing</h2>
               <div className="space-y-2">
-                <p><strong>Health Department License:</strong> HD-2024-001</p>
+                <p><strong>Health Department License:</strong> HD-2026-001</p>
                 <p><strong>Professional Tattoo Artist Certification:</strong> Certified by German Tattoo Association</p>
-                <p><strong>Hygiene Certificate:</strong> Updated annually according to local health regulations</p>
+                <p><strong>Hygiene Certificate:</strong> Updated annually according to § 6 Tätowiermittelverordnung (TätMV)</p>
               </div>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-foreground">Responsible for Content</h2>
               <p>
-                Alex Rivera is responsible for all content on this website according to 
-                § 55 Abs. 2 RStV (German Interstate Broadcasting Agreement).
+                Max Riss is responsible for all content on this website according to 
+                § 18 Abs. 2 MStV (Medienstaatsvertrag) and § 5 TMG (Telemediengesetz).
               </p>
             </section>
 
@@ -53,6 +52,7 @@ const Imprint = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">Liability for Content</h3>
                   <p>
+                    As a service provider, we are responsible for our own content on these pages according to § 7 Abs. 1 TMG. 
                     The content of our pages has been created with the utmost care. However, 
                     we cannot guarantee the content's accuracy, completeness, or topicality.
                   </p>
@@ -61,8 +61,9 @@ const Imprint = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-foreground">Liability for Links</h3>
                   <p>
-                    Our offer includes links to external third-party websites. We have no 
-                    influence on the content of these websites and cannot guarantee their accuracy.
+                    Our website contains links to external third-party websites over whose content we have no control. 
+                    Therefore, we cannot assume any liability for this external content. According to §§ 8 to 10 TMG, 
+                    we are not obligated to monitor transmitted or stored third-party information.
                   </p>
                 </div>
               </div>
