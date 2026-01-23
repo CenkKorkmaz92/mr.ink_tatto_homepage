@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Selina 'Mrs. Steel' Riss",
+    name: "Selina",
     role: "selinaRole",
     image: profileMrsSteel,
     description: "selinaBio",

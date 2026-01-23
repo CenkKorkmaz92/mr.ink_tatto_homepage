@@ -127,6 +127,10 @@ const Home = () => {
                 loop
                 playsInline
                 className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.9)' }}
+                ref={(el) => {
+                  if (el) el.playbackRate = 0.75;
+                }}
               >
                 <source src="/studio_teaser.mp4" type="video/mp4" />
               </video>
@@ -182,10 +186,10 @@ const Home = () => {
       <div className="bg-primary/50 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4 text-accent">Bereit für ein neues Tattoo?</h2>
-            <p className="text-xl mb-8 text-muted-foreground">Vereinbaren Sie einen Termin für eine persönliche Beratung</p>
+            <h2 className="text-3xl font-bold mb-4 text-accent">{t('home.cta.title')}</h2>
+            <p className="text-xl mb-8 text-muted-foreground">{t('home.cta.subtitle')}</p>
             <Button size="lg" asChild>
-              <Link to="/contact?recipient=mrink">{t('home.hero.cta')}</Link>
+              <Link to="/contact?recipient=mrink">{t('home.cta.button')}</Link>
             </Button>
           </div>
         </div>

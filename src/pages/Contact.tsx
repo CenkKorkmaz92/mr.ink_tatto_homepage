@@ -127,8 +127,8 @@ const Contact = () => {
                     <SelectValue placeholder={t('contact.form.selectRecipient')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="mrink">Max Riss - Tattoo (mr.ink.nt@gmail.com)</SelectItem>
-                    <SelectItem value="mrssteel">Mrs. Steel - Piercing (mrs.steel.111@gmail.com)</SelectItem>
+                    <SelectItem value="mrink">Mr. Ink - Max</SelectItem>
+                    <SelectItem value="mrssteel">Mrs. Steel - Selina</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -158,9 +158,8 @@ const Contact = () => {
             {/* Contact Cards Grid */}
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-8">
-                <h2 className="text-2xl font-bold mb-6 text-accent">Tattoo</h2>
+                <h2 className="text-2xl font-bold mb-6 text-accent">Mr. Ink - Max</h2>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-accent">Max</h3>
                   <Separator className="bg-accent" />
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
@@ -180,9 +179,8 @@ const Contact = () => {
               </Card>
 
               <Card className="p-8">
-                <h2 className="text-2xl font-bold mb-6 text-accent">Piercings</h2>
+                <h2 className="text-2xl font-bold mb-6 text-accent">Mrs. Steel - Selina</h2>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-accent">Selina</h3>
                   <Separator className="bg-accent" />
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">

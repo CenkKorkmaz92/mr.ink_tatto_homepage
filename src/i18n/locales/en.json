@@ -8,18 +8,23 @@
   },
   "home": {
     "hero": {
-      "title": "Welcome to MR.Ink Tattoo",
-      "subtitle": "We bring your ideas to life with custom tattoos and professional piercings. Let's create something amazing together!",
+      "title": "Welcome to Mr. Ink Tattoo",
+      "subtitle": "We bring your ideas to life with custom tattoos and professional piercings. Let's create something unique together!",
       "cta": "Book Appointment"
     },
-    "studioTitle": "Our Studio"
+    "studioTitle": "Our Studio",
+    "cta": {
+      "title": "Ready for a New Tattoo?",
+      "subtitle": "Book an appointment for a personal consultation",
+      "button": "Book Appointment"
+    }
   },
   "pircing": {
     "title": "Mrs. Steel - Piercing Specialist",
     "intro": "Experience professional piercing artistry with the highest safety and hygiene standards.",
     "about": {
       "title": "About Mrs. Steel",
-      "description": "Selina 'Mrs. Steel' Riss is the piercing specialist at Mr. Ink Tattoo. She values individual consultation and ensures every client feels comfortable and safe.",
+      "description": "Selina is the piercing specialist at Mr. Ink Tattoo. She values individual consultation and ensures every client feels comfortable and safe.",
       "description2": "With comprehensive training in piercing techniques and anatomy, Mrs. Steel provides expert advice on all piercing requests. From classic ear piercings to body piercings – quality and safety come first."
     },
     "services": {
@@ -63,10 +68,10 @@
   "team": {
     "title": "Our Team",
     "subtitle": "Meet the talented artists behind Mr. Ink Tattoo",
-    "maxRole": "Owner Mr. Ink Tattoo",
+    "maxRole": "About Mr. Ink",
     "maxBio": "Max is the owner of Mr. Ink Tattoo in Nürtingen. With his feel for current trends and an eye for aesthetics, he creates individual tattoos – whether classic motifs or modern styles. His precision and passion for custom artwork define his work. Outside the studio, Max is a family man.",
     "selinaRole": "Mrs. Steel - Piercing Specialist",
-    "selinaBio": "Selina 'Mrs. Steel' Riss handles all piercings at Mr. Ink Tattoo. With comprehensive training in anatomy and hygiene, she ensures safe and beautiful results."
+    "selinaBio": "Selina handles all piercings at Mr. Ink Tattoo. With comprehensive training in anatomy and hygiene, she ensures safe and beautiful results."
   },
   "contact": {
     "title": "Contact Us",
@@ -91,6 +96,9 @@
       "thankYou": "Thank you for your inquiry. We'll get back to you soon."
     },
     "owner": "Studio Owner",
+    "piercingSpecialist": "Piercings",
+    "tattoo": "Tattoo",
+    "piercings": "Piercings",
     "hours": {
       "title": "Opening Hours",
       "tuesday": "Tuesday - Friday: 11:00 - 19:00",
@@ -171,7 +179,7 @@
     }
   },
   "hero": {
-    "title": "Welcome to MR.Ink Tattoo",
+    "title": "Welcome to Mr. Ink Tattoo",
     "subtitle": "Precision & Passion"
   },
   "galleryInfo": {
