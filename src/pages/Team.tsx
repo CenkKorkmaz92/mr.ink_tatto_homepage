@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import profileMrInk from "@/assets/profile_mrInk.webp";
-import profileMrsInk from "@/assets/profile_mrs_ink.webp";
+import profileMrsSteel from "@/assets/mrs_steel_profile.webp";
 
 const teamMembers = [
   {
@@ -16,7 +16,7 @@ const teamMembers = [
     id: 2,
     name: "Selina 'Mrs. Steel' Riss",
     role: "selinaRole",
-    image: profileMrsInk,
+    image: profileMrsSteel,
     description: "selinaBio"
   }
 ];
@@ -28,7 +28,7 @@ const Team = () => {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{t('team.title')}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-accent">{t('team.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('team.subtitle')}
           </p>
@@ -52,7 +52,7 @@ const Team = () => {
                 {/* Artist Info */}
                 <div className={`flex flex-col justify-center space-y-6 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
                   <div>
-                    <h2 className="text-3xl font-bold text-foreground mb-2">{member.name}</h2>
+                    <h2 className="text-3xl font-bold text-accent mb-2">{member.name}</h2>
                     <p className="text-xl text-accent font-semibold mb-4">{t(`team.${member.role}`)}</p>
                   </div>
                   

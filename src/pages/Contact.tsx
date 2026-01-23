@@ -65,7 +65,7 @@ const Contact = () => {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{t('contact.title')}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-accent">{t('contact.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('contact.subtitle')}
           </p>
@@ -74,7 +74,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="p-8">
-            <h2 className="text-2xl font-bold mb-6 text-foreground">{t('contact.form.sendMessage')}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.form.sendMessage')}</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -126,7 +126,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">{t('contact.owner')}</h2>
+              <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.owner')}</h2>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-accent">Max Riss</h3>
                 <Separator className="bg-accent" />
@@ -148,7 +148,7 @@ const Contact = () => {
             </Card>
 
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">{t('contact.hours.title')}</h2>
+              <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.hours.title')}</h2>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-accent" />
@@ -166,7 +166,7 @@ const Contact = () => {
             </Card>
 
             <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">{t('contact.expect.title')}</h2>
+              <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.expect.title')}</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• {t('contact.expect.consultation')}</li>
                 <li>• {t('contact.expect.custom')}</li>
@@ -179,7 +179,7 @@ const Contact = () => {
 
         {/* Map Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t('contact.location')}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-accent">{t('contact.location')}</h2>
           <div className="aspect-video w-full max-w-4xl mx-auto">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.8687519864844!2d9.327939676810485!3d48.30933677125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799c5e4e8d5b7ab%3A0x7e3e8e8e8e8e8e8e!2sNeuffener%20Str.%2066%2C%2072622%20N%C3%BCrtingen!5e0!3m2!1sde!2sde!4v1"

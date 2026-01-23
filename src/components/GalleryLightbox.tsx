@@ -45,7 +45,7 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
       <Button
         variant="ghost"
         size="icon"
-        className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+        className="absolute top-4 right-4 text-accent hover:bg-accent/20 z-10"
         onClick={onClose}
       >
         <X size={24} />
@@ -57,7 +57,7 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-accent hover:bg-accent/20 z-10"
             onClick={(e) => {
               e.stopPropagation();
               goToPrevious();
@@ -69,7 +69,7 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-accent hover:bg-accent/20 z-10"
             onClick={(e) => {
               e.stopPropagation();
               goToNext();
@@ -93,7 +93,7 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
       </div>
 
       {/* Image Counter */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-3 py-1 rounded">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-accent text-sm bg-primary/80 px-3 py-1 rounded">
         {currentIndex + 1} / {images.length}
       </div>
     </div>

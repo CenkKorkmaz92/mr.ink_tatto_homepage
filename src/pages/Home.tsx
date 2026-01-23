@@ -61,9 +61,9 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 lg:gap-32 items-center">
           {/* Artist Section */}
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center">{t('team.maxRole')}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-accent text-center">{t('team.maxRole')}</h2>
             <div className="flex flex-col md:grid md:grid-cols-[auto_1px_1fr] gap-4 md:gap-6 items-start">
-              <Card className="overflow-hidden mx-auto md:mx-0 w-full md:w-auto">
+              <Card className="overflow-hidden mx-auto md:mx-0 w-full md:w-auto border border-accent/30">
                 <img
                   src={profileMrInk}
                   alt="Main Artist"
@@ -87,7 +87,7 @@ const Home = () => {
           {/* Gallery Preview */}
           <div className="relative mx-auto md:mx-0 w-fit flex flex-col justify-between min-h-[400px] md:min-h-full">
             <Separator className="bg-accent" />
-            <Card className="overflow-hidden my-6 md:my-auto">
+            <Card className="overflow-hidden my-6 md:my-auto border border-accent/30">
               <div className="relative">
                 <video
                   key={currentVideoIndex}
@@ -116,11 +116,11 @@ const Home = () => {
       {/* Studio Images */}
       <div className="bg-primary/50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t('home.studioTitle')}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-accent">{t('home.studioTitle')}</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Studio Video */}
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden border border-accent/30 rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-none">
               <video
                 autoPlay
                 muted
@@ -135,7 +135,11 @@ const Home = () => {
             {studioImages.map((image, index) => (
               <Card 
                 key={index} 
-                className="overflow-hidden cursor-pointer group hover:shadow-lg transition-shadow"
+                className={`overflow-hidden cursor-pointer group hover:shadow-lg transition-shadow border border-accent/30 ${
+                  index === 0 
+                    ? 'rounded-none' 
+                    : 'rounded-tl-none rounded-tr-2xl rounded-bl-none rounded-br-none'
+                }`}
                 onClick={() => openStudioGallery(index)}
               >
                 <img
@@ -152,7 +156,7 @@ const Home = () => {
       {/* Google Maps Section */}
       <div className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t('contact.location')}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-accent">{t('contact.location')}</h2>
           <div className="aspect-video w-full max-w-4xl mx-auto">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.8687519864844!2d9.327939676810485!3d48.30933677125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799c5e4e8d5b7ab%3A0x7e3e8e8e8e8e8e8e!2sNeuffener%20Str.%2066%2C%2072622%20N%C3%BCrtingen!5e0!3m2!1sde!2sde!4v1"

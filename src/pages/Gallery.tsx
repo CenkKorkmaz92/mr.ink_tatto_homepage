@@ -89,7 +89,7 @@ const Gallery = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{t('gallery.title')}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-accent">{t('gallery.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('gallery.subtitle')}
           </p>
@@ -124,7 +124,7 @@ const Gallery = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white p-4">
+                  <div className="text-center text-accent p-4">
                     <h3 className="font-semibold mb-2">{image.alt}</h3>
                     <p className="text-sm opacity-90">{image.description}</p>
                   </div>
@@ -144,7 +144,7 @@ const Gallery = () => {
         {/* Gallery Info */}
         <div className="mt-16 text-center">
           <Card className="max-w-2xl mx-auto p-8">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">{t('galleryInfo.title')}</h2>
+            <h2 className="text-2xl font-bold mb-4 text-accent">{t('galleryInfo.title')}</h2>
             <p className="text-muted-foreground leading-relaxed">
               {t('galleryInfo.description')}
             </p>

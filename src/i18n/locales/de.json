@@ -20,7 +20,7 @@
     "about": {
       "title": "Über Mrs. Steel",
       "description": "Selina 'Mrs. Steel' Riss ist Piercing-Spezialistin bei Mr. Ink Tattoo. Sie legt großen Wert auf individuelle Beratung und sorgt dafür, dass sich jeder Kunde wohl und sicher fühlt.",
-      "description2": "Mit fundierter Ausbildung in Piercing-Techniken und Anatomie findet Mrs. Steel für jeden Kunden das passende Piercing. Von klassischen Ohrlöchern bis zu Körperpiercings – Qualität und Sicherheit stehen an erster Stelle."
+      "description2": "Mit fundierter Ausbildung in Piercing-Techniken und Anatomie berät Mrs. Steel kompetent zu allen Piercing-Wünschen. Von klassischen Ohrlöchern bis zu Körperpiercings – Qualität und Sicherheit stehen an erster Stelle."
     },
     "services": {
       "title": "Unsere Piercing Services",
@@ -33,6 +33,7 @@
     },
     "standards": {
       "title": "Unsere Standards",
+      "subtitle": "Sauber, zertifiziert und professionell",
       "quality": "Premium Materialien",
       "qualityDesc": "Nur hochwertige, biokompatible Materialien",
       "sterile": "Sterile Umgebung",
@@ -112,7 +113,7 @@
   },
   "hero": {
     "title": "Willkommen bei MR.Ink Tattoo",
-    "subtitle": "Wir bringen deine Ideen zum Leben mit individuellen Tattoos und professionellen Piercings. Lass uns gemeinsam etwas Einzigartiges schaffen!"
+    "subtitle": "Präzision & Leidenschaft"
   },
   "galleryInfo": {
     "title": "Unser Portfolio",

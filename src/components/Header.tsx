@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 backdrop-blur border-b ${
+    <header className={`sticky top-0 z-50 backdrop-blur border-b shadow-[0_8px_16px_-4px_rgba(239,209,87,0.2)] ${
       isPricingPage 
         ? "bg-golden/95 supports-[backdrop-filter]:bg-golden/60 border-golden-foreground/20" 
         : "bg-background/95 supports-[backdrop-filter]:bg-background/60 border-border"
@@ -42,15 +42,14 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Mr. Ink Tattoo Logo" 
-              className="h-10 w-auto object-contain rounded-2xl border-[0.5px] border-yellow-500 opacity-90 hover:opacity-100 transition-opacity duration-300"
+              className="h-10 w-auto object-contain rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl opacity-90 hover:opacity-100 transition-all duration-300 border border-accent/30 hover:border-accent"
             />
-            <span className={`text-xl font-bold relative transition-colors ${
-              isPricingPage ? "text-golden-foreground hover:text-golden-foreground" : "text-foreground hover:text-yellow-500"
+            <span className={`text-xl font-bold px-3 py-1.5 rounded-tl-none rounded-tr-2xl rounded-bl-2xl rounded-br-none border transition-all duration-300 ${
+              isPricingPage 
+                ? "text-golden-foreground border-golden-foreground/30 hover:border-golden-foreground hover:bg-golden-foreground/10" 
+                : "text-accent border-accent/30 hover:border-accent hover:bg-accent/10 shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
             }`}>
               Mr.Ink Tattoo
-              <span className={`absolute bottom-0 left-0 h-[0.5px] w-full group-hover:w-full transition-all duration-300 ${
-                isPricingPage ? "bg-golden-foreground" : "bg-yellow-500"
-              }`}></span>
             </span>
           </Link>
 
@@ -67,7 +66,7 @@ const Header = () => {
                           ? "text-golden-foreground"
                           : "text-golden-foreground/70"
                       }`
-                    : `hover:text-yellow-500 ${
+                    : `hover:text-accent ${
                         location.pathname === item.path
                           ? "text-accent"
                           : "text-muted-foreground"
@@ -75,8 +74,8 @@ const Header = () => {
                 }`}
               >
                 {item.name}
-                <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                  isPricingPage ? "bg-golden-foreground" : "bg-yellow-500"
+                <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 shadow-[0_0_8px_currentColor] ${
+                  isPricingPage ? "bg-golden-foreground" : "bg-accent"
                 } ${
                   location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"
                 }`}></span>
@@ -88,14 +87,20 @@ const Header = () => {
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className={isPricingPage ? "text-golden-foreground hover:text-golden-foreground" : ""}
+                className={`border transition-all duration-300 rounded-full ${
+                  isPricingPage 
+                    ? "border-golden-foreground/30 hover:border-golden-foreground hover:bg-golden-foreground/10" 
+                    : "border-accent/30 hover:border-accent hover:bg-accent/10 shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
+                }`}
                 onClick={() => changeLanguage(i18n.language === 'de' ? 'en' : 'de')}
+                title={i18n.language === 'de' ? 'Switch to English' : 'Zu Deutsch wechseln'}
               >
-                <Languages size={20} />
+                <img 
+                  src={i18n.language === 'de' ? '/flags/germany.webp' : '/flags/united-kingdom.webp'} 
+                  alt={i18n.language === 'de' ? 'Deutsche Flagge' : 'English Flag'}
+                  className="w-6 h-6 object-cover rounded-full"
+                />
               </Button>
-              <span className={`text-sm font-medium ${isPricingPage ? "text-golden-foreground" : "text-foreground"}`}>
-                {i18n.language.toUpperCase()}
-              </span>
             </div>
           </nav>
 
@@ -139,17 +144,41 @@ const Header = () => {
             ))}
             
             {/* Mobile Language Switcher */}
-            <div className="pt-2 mt-2 border-t border-border">
+            <div className="pt-2 mt-2 border-t border-border flex gap-2">
               <button
-                onClick={() => changeLanguage('de')}
-                className="block py-2 text-sm font-medium w-full text-left"
+                onClick={() => {
+                  changeLanguage('de');
+                  setIsMenuOpen(false);
+                }}
+                className={`flex items-center gap-2 py-2 px-3 text-sm font-medium w-full rounded-lg border transition-all ${
+                  i18n.language === 'de' 
+                    ? 'border-accent bg-accent/10' 
+                    : 'border-accent/30 hover:border-accent hover:bg-accent/5'
+                }`}
               >
+                <img 
+                  src="/flags/germany.webp" 
+                  alt="Deutsche Flagge"
+                  className="w-5 h-5 object-cover rounded-sm"
+                />
                 Deutsch
               </button>
               <button
-                onClick={() => changeLanguage('en')}
-                className="block py-2 text-sm font-medium w-full text-left"
+                onClick={() => {
+                  changeLanguage('en');
+                  setIsMenuOpen(false);
+                }}
+                className={`flex items-center gap-2 py-2 px-3 text-sm font-medium w-full rounded-lg border transition-all ${
+                  i18n.language === 'en' 
+                    ? 'border-accent bg-accent/10' 
+                    : 'border-accent/30 hover:border-accent hover:bg-accent/5'
+                }`}
               >
+                <img 
+                  src="/flags/united-kingdom.webp" 
+                  alt="English Flag"
+                  className="w-5 h-5 object-cover rounded-sm"
+                />
                 English
               </button>
             </div>

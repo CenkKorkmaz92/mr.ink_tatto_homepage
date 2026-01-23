@@ -19,27 +19,27 @@
     --primary: 220 13% 18%;
     --primary-foreground: 45 35% 85%;
 
-    --secondary: 45 85% 65%;
+    --secondary: 42 42% 58%;
     --secondary-foreground: 220 13% 12%;
 
     --muted: 220 13% 20%;
-    --muted-foreground: 45 15% 65%;
+    --muted-foreground: 42 20% 58%;
 
-    --accent: 45 85% 65%;
+    --accent: 42 42% 58%;
     --accent-foreground: 220 13% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 45 35% 85%;
+    --destructive-foreground: 42 30% 85%;
 
     --border: 220 13% 25%;
     --input: 220 13% 20%;
-    --ring: 45 85% 65%;
+    --ring: 42 42% 58%;
 
     /* Golden Theme Variables for Pricing Page */
-    --golden-background: 45 85% 65%;
+    --golden-background: 42 42% 58%;
     --golden-foreground: 220 13% 12%;
-    --golden-card: 45 80% 70%;
-    --golden-muted: 45 60% 75%;
+    --golden-card: 42 38% 62%;
+    --golden-muted: 42 32% 68%;
     --golden-accent: 0 0% 100%;
 
     /* Custom Design Tokens */

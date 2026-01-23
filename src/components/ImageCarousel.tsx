@@ -65,7 +65,7 @@ const ImageCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent"
         onClick={goToPrevious}
       >
         <ChevronLeft size={24} />
@@ -74,7 +74,7 @@ const ImageCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent"
         onClick={goToNext}
       >
         <ChevronRight size={24} />
@@ -95,9 +95,25 @@ const ImageCarousel = () => {
 
       {/* Overlay Content */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">{t('hero.title')}</h1>
-          <p className="text-xl md:text-2xl text-white/90">{t('hero.subtitle')}</p>
+        <div className="text-center text-accent px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            {t('hero.title').split(' bei ').length > 1 ? (
+              <>
+                {t('hero.title').split(' bei ')[0]}
+                <br />
+                bei {t('hero.title').split(' bei ')[1]}
+              </>
+            ) : t('hero.title').split(' to ').length > 1 ? (
+              <>
+                {t('hero.title').split(' to ')[0]} to
+                <br />
+                {t('hero.title').split(' to ')[1]}
+              </>
+            ) : (
+              t('hero.title')
+            )}
+          </h1>
+          <p className="text-xl md:text-2xl text-accent/90">{t('hero.subtitle')}</p>
         </div>
       </div>
     </div>
