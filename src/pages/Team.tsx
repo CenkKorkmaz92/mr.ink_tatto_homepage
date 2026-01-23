@@ -10,14 +10,18 @@ const teamMembers = [
     name: "Max Riss",
     role: "maxRole",
     image: profileMrInk,
-    description: "maxBio"
+    description: "maxBio",
+    phone: "01573 3360210",
+    email: "mr.ink.nt@gmail.com"
   },
   {
     id: 2,
     name: "Selina 'Mrs. Steel' Riss",
     role: "selinaRole",
     image: profileMrsSteel,
-    description: "selinaBio"
+    description: "selinaBio",
+    phone: "0157 52047349",
+    email: "mrs.steel.111@gmail.com"
   }
 ];
 
@@ -61,6 +65,16 @@ const Team = () => {
                   <p className="text-muted-foreground leading-relaxed text-lg">
                     {t(`team.${member.description}`)}
                   </p>
+                  
+                  <div className="pt-4 space-y-2">
+                    <p className="text-sm font-semibold text-accent">Kontakt:</p>
+                    <p className="text-sm text-muted-foreground">
+                      <strong>Telefon:</strong> {member.phone}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <strong>E-Mail:</strong> {member.email}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>

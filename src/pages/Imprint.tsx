@@ -37,7 +37,7 @@ const Imprint = () => {
                 <p><strong>Owner:</strong> Max Riss</p>
                 <p><strong>Address:</strong> Neuffener Str. 66<br />72622 Nürtingen, Germany</p>
                 <p><strong>Phone:</strong> 01573 3360210</p>
-                <p><strong>Email:</strong> info@mrink-studio.de</p>
+                <p><strong>Email:</strong> mr.ink.nt@gmail.com</p>
               </div>
             </section>
 

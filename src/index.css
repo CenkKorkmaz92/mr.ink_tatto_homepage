@@ -137,4 +137,67 @@
     background-color: hsl(220 13% 18%);
     color: hsl(0 0% 100%);
   }
+
+  /* Scrollbar Styles - Dark Theme (Default) */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(220 13% 15%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(42 42% 58%);
+    border-radius: 6px;
+    border: 2px solid hsl(220 13% 15%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(42 42% 68%);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(42 42% 58%) hsl(220 13% 15%);
+  }
+
+  /* Scrollbar for Golden Theme (Pircing Page) */
+  .bg-golden ::-webkit-scrollbar-track {
+    background: hsl(42 38% 62%);
+  }
+
+  .bg-golden ::-webkit-scrollbar-thumb {
+    background: hsl(220 13% 18%);
+    border-radius: 6px;
+    border: 2px solid hsl(42 38% 62%);
+  }
+
+  .bg-golden ::-webkit-scrollbar-thumb:hover {
+    background: hsl(220 13% 25%);
+  }
+
+  .bg-golden * {
+    scrollbar-color: hsl(220 13% 18%) hsl(42 38% 62%);
+  }
+
+  /* Legal Modals - Always Dark Scrollbar */
+  .legal-modal ::-webkit-scrollbar-track {
+    background: hsl(220 13% 15%) !important;
+  }
+
+  .legal-modal ::-webkit-scrollbar-thumb {
+    background: hsl(42 42% 58%) !important;
+    border-color: hsl(220 13% 15%) !important;
+  }
+
+  .legal-modal ::-webkit-scrollbar-thumb:hover {
+    background: hsl(42 42% 68%) !important;
+  }
+
+  .legal-modal * {
+    scrollbar-color: hsl(42 42% 58%) hsl(220 13% 15%) !important;
+  }
 }

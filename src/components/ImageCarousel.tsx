@@ -96,7 +96,7 @@ const ImageCarousel = () => {
       {/* Overlay Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-accent px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ textShadow: '0 0 10px rgba(40, 44, 52, 1), 0 0 20px rgba(40, 44, 52, 1), 0 0 30px rgba(40, 44, 52, 0.9), 0 0 40px rgba(40, 44, 52, 0.8), 3px 3px 6px rgba(40, 44, 52, 0.9), -3px -3px 6px rgba(40, 44, 52, 0.9), 3px -3px 6px rgba(40, 44, 52, 0.9), -3px 3px 6px rgba(40, 44, 52, 0.9)' }}>
             {t('hero.title').split(' bei ').length > 1 ? (
               <>
                 {t('hero.title').split(' bei ')[0]}
@@ -113,7 +113,7 @@ const ImageCarousel = () => {
               t('hero.title')
             )}
           </h1>
-          <p className="text-xl md:text-2xl text-accent/90">{t('hero.subtitle')}</p>
+          <p className="text-xl md:text-2xl text-accent/90" style={{ textShadow: '0 0 8px rgba(40, 44, 52, 1), 0 0 15px rgba(40, 44, 52, 1), 0 0 25px rgba(40, 44, 52, 0.9), 2px 2px 4px rgba(40, 44, 52, 0.9), -2px -2px 4px rgba(40, 44, 52, 0.9), 2px -2px 4px rgba(40, 44, 52, 0.9), -2px 2px 4px rgba(40, 44, 52, 0.9)' }}>{t('hero.subtitle')}</p>
         </div>
       </div>
     </div>

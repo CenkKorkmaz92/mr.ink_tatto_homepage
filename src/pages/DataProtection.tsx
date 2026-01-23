@@ -46,7 +46,7 @@ const DataProtection = () => {
                 <p><strong>Responsible party:</strong> Max Riss</p>
                 <p><strong>Address:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
                 <p><strong>Phone:</strong> 01573 3360210</p>
-                <p><strong>Email:</strong> info@mrink-studio.de</p>
+                <p><strong>Email:</strong> mr.ink.nt@gmail.com</p>
               </div>
             </section>
 
@@ -151,7 +151,7 @@ const DataProtection = () => {
               <h2 className="text-2xl font-semibold mb-4 text-accent">9. Contact</h2>
               <p>
                 If you have any questions about this privacy policy or your personal data, 
-                please contact us at info@mrink-studio.de or use the contact information 
+                please contact us at mr.ink.nt@gmail.com or use the contact information 
                 provided in section 2.
               </p>
             </section>

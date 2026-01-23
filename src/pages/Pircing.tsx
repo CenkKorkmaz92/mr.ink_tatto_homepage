@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -7,13 +8,11 @@ import ImageCarousel from "@/components/ImageCarousel";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import profileMrsSteel from "@/assets/mrs_steel_profile.webp";
 import galleryPreview from "@/assets/gallery-preview.jpg";
+import portfolioMrsSteel from "@/assets/portfolio_mrs_steel.webp";
 import pircingStandard1 from "@/assets/pircing_standart_1.webp";
 import pircingStandard2 from "@/assets/pircing_standart_2.webp";
 
-const galleryImages = [
-  { src: galleryPreview, alt: "Piercing Gallery Preview" },
-  { src: profileMrsSteel, alt: "Piercing Example Work" },
-];
+const galleryImages: { src: string; alt: string }[] = [];
 
 const studioImages = [
   { src: pircingStandard1, alt: "Studio Piercing Area 1" },
@@ -126,8 +125,8 @@ const Pircing = () => {
             <Card className="overflow-hidden my-6 md:my-auto border border-golden-foreground/30 bg-golden-card">
               <div className="relative cursor-pointer group" onClick={() => openGallery()}>
                 <img
-                  src={galleryPreview}
-                  alt="Piercing Gallery Preview"
+                  src={portfolioMrsSteel}
+                  alt="Piercing Portfolio"
                   className="w-auto h-[400px] md:h-[500px] object-cover select-none"
                   onContextMenu={(e) => e.preventDefault()}
                   style={{ WebkitTouchCallout: 'none' }}
@@ -175,8 +174,8 @@ const Pircing = () => {
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold mb-4" style={{ color: '#282c34' }}>{t('pircing.cta.title')}</h2>
             <p className="text-xl mb-8" style={{ color: '#282c34' }}>{t('pircing.cta.subtitle')}</p>
-            <Button size="lg" className="bg-golden-foreground text-golden hover:bg-golden-foreground/90">
-              {t('pircing.cta.button')}
+            <Button size="lg" className="bg-golden-foreground text-golden hover:bg-golden-foreground/90" asChild>
+              <Link to="/contact?recipient=mrssteel">{t('pircing.cta.button')}</Link>
             </Button>
           </div>
         </div>

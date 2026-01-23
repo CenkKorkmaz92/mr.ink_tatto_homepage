@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -18,10 +19,7 @@ const portfolioVideos = [
 ];
 
 // Sample gallery images - you can replace these with actual tattoo images
-const galleryImages = [
-  { src: galleryPreview, alt: "Tattoo Gallery Preview" },
-  { src: profileMrInk, alt: "Artist Work Sample" },
-];
+const galleryImages: { src: string; alt: string }[] = [];
 
 const studioImages = [
   { src: roomtourMax1, alt: "Studio Room Tour 1" },
@@ -77,9 +75,11 @@ const Home = () => {
               <Separator className="bg-accent md:hidden" />
               
               <div className="space-y-4 flex items-center w-full">
-                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                  {t('team.maxBio')}
-                </p>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    {t('team.maxBio')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -174,6 +174,19 @@ const Home = () => {
               Neuffener Str. 66<br />
               72622 Nürtingen
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-primary/50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-accent">Bereit für ein neues Tattoo?</h2>
+            <p className="text-xl mb-8 text-muted-foreground">Vereinbaren Sie einen Termin für eine persönliche Beratung</p>
+            <Button size="lg" asChild>
+              <Link to="/contact?recipient=mrink">{t('home.hero.cta')}</Link>
+            </Button>
           </div>
         </div>
       </div>

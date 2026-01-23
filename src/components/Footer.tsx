@@ -53,7 +53,7 @@ const Footer = () => {
               className={`border transition-all duration-300 ${
                 isPricingPage
                   ? "border-accent/30 hover:border-accent hover:bg-accent/10 text-accent hover:text-accent rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
-                  : "border-accent/30 hover:border-accent hover:bg-accent/10 hover:text-accent rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
+                  : "border-accent/30 hover:border-accent hover:bg-accent/10 text-accent hover:text-accent rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-2xl shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
               }`}
               asChild
             >
@@ -72,7 +72,7 @@ const Footer = () => {
               className={`border transition-all duration-300 ${
                 isPricingPage
                   ? "border-accent/30 hover:border-accent hover:bg-accent/10 text-accent hover:text-accent rounded-tl-none rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
-                  : "border-accent/30 hover:border-accent hover:bg-accent/10 hover:text-accent rounded-tl-none rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
+                  : "border-accent/30 hover:border-accent hover:bg-accent/10 text-accent hover:text-accent rounded-tl-none rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-[0_0_8px_rgba(160,130,90,0.2)] hover:shadow-[0_0_12px_rgba(160,130,90,0.4)]"
               }`}
               asChild
             >
@@ -100,78 +100,52 @@ const Footer = () => {
       {/* Imprint Dialog */}
       <Dialog open={imprintOpen} onOpenChange={setImprintOpen}>
         <DialogContent 
-          className={`max-w-4xl max-h-[90vh] overflow-y-auto ${isPricingPage ? 'bg-golden-card' : ''}`}
+          className={`max-w-4xl max-h-[90vh] overflow-y-auto legal-modal ${isPricingPage ? 'bg-golden-card' : ''}`}
           closeButtonClassName={isPricingPage ? 'text-primary hover:text-primary' : ''}
         >
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>
-              Imprint
+              {t('legal.imprint.title')}
             </DialogTitle>
           </DialogHeader>
           <div className={`space-y-6 ${isPricingPage ? '' : 'text-muted-foreground'}`} style={isPricingPage ? { color: '#282c34' } : {}}>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Business Information</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.businessInfo')}</h2>
               <div className="space-y-1 text-sm">
-                <p><strong>Company:</strong> Mr. Ink Tattoo</p>
-                <p><strong>Owner:</strong> Max Riss</p>
-                <p><strong>Address:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
-                <p><strong>Phone:</strong> 01573 3360210</p>
-                <p><strong>Email:</strong> info@mrink-studio.de</p>
+                <p><strong>{t('legal.imprint.company')}:</strong> Mr. Ink Tattoo</p>
+                <p><strong>{t('legal.imprint.owner')}:</strong> Max Riss</p>
+                <p><strong>{t('legal.imprint.address')}:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
+                <p><strong>{t('legal.imprint.phone')}:</strong> 01573 3360210</p>
+                <p><strong>{t('legal.imprint.email')}:</strong> mr.ink.nt@gmail.com</p>
               </div>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Business Registration</h2>
-              <div className="space-y-1 text-sm">
-                <p><strong>Trade Registry:</strong> HRB 123456</p>
-                <p><strong>Registration Court:</strong> Amtsgericht Stuttgart</p>
-                <p><strong>VAT ID:</strong> DE123456789</p>
-                <p><strong>Tax Number:</strong> 12/345/67890</p>
-              </div>
-            </section>
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Professional Licensing</h2>
-              <div className="space-y-1 text-sm">
-                <p><strong>Health Department License:</strong> HD-2026-001</p>
-                <p><strong>Professional Tattoo Artist Certification:</strong> Certified by German Tattoo Association</p>
-                <p><strong>Hygiene Certificate:</strong> Updated annually according to § 6 Tätowiermittelverordnung (TätMV)</p>
-              </div>
-            </section>
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Responsible for Content</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.responsible')}</h2>
               <p className="text-sm">
-                Max Riss is responsible for all content on this website according to 
-                § 18 Abs. 2 MStV (Medienstaatsvertrag) and § 5 TMG (Telemediengesetz).
+                {t('legal.imprint.responsibleText')}
               </p>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Disclaimer</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.disclaimer')}</h2>
               <div className="space-y-3">
                 <div>
-                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Liability for Content</h3>
+                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.liabilityContent')}</h3>
                   <p className="text-sm">
-                    As a service provider, we are responsible for our own content on these pages according to § 7 Abs. 1 TMG. 
-                    The content of our pages has been created with the utmost care. However, 
-                    we cannot guarantee the content's accuracy, completeness, or topicality.
+                    {t('legal.imprint.liabilityContentText')}
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Liability for Links</h3>
+                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.liabilityLinks')}</h3>
                   <p className="text-sm">
-                    Our website contains links to external third-party websites over whose content we have no control. 
-                    Therefore, we cannot assume any liability for this external content. According to §§ 8 to 10 TMG, 
-                    we are not obligated to monitor transmitted or stored third-party information.
+                    {t('legal.imprint.liabilityLinksText')}
                   </p>
                 </div>
               </div>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Copyright</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.copyright')}</h2>
               <p className="text-sm">
-                The content and works on these pages created by the site operators are 
-                subject to German copyright law. Duplication, processing, distribution, 
-                and any form of commercialization of such material beyond the scope of 
-                copyright law shall require the prior written consent of its respective 
-                author or creator.
+                {t('legal.imprint.copyrightText')}
               </p>
             </section>
           </div>
@@ -181,62 +155,88 @@ const Footer = () => {
       {/* Data Protection Dialog */}
       <Dialog open={dataProtectionOpen} onOpenChange={setDataProtectionOpen}>
         <DialogContent 
-          className={`max-w-4xl max-h-[90vh] overflow-y-auto ${isPricingPage ? 'bg-golden-card' : ''}`}
+          className={`max-w-4xl max-h-[90vh] overflow-y-auto legal-modal ${isPricingPage ? 'bg-golden-card' : ''}`}
           closeButtonClassName={isPricingPage ? 'text-primary hover:text-primary' : ''}
         >
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>
-              Data Protection Policy
+              {t('legal.privacy.title')}
             </DialogTitle>
           </DialogHeader>
           <div className={`space-y-6 ${isPricingPage ? '' : 'text-muted-foreground'}`} style={isPricingPage ? { color: '#282c34' } : {}}>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>1. Data Protection Overview</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.overview')}</h2>
               <p className="text-sm">
-                The following information provides an overview of what happens to your 
-                personal data when you visit our website. Personal data is any data that 
-                can be used to personally identify you. This privacy policy complies with 
-                the EU General Data Protection Regulation (GDPR) and the German Federal Data Protection Act (BDSG).
+                {t('legal.privacy.overviewText')}
               </p>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>2. Data Controller</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.controller')}</h2>
+              <p className="text-sm mb-2">{t('legal.privacy.controllerText')}</p>
               <div className="space-y-1 text-sm">
-                <p><strong>Responsible party:</strong> Max Riss</p>
-                <p><strong>Address:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
-                <p><strong>Phone:</strong> 01573 3360210</p>
-                <p><strong>Email:</strong> info@mrink-studio.de</p>
+                <p><strong>{t('legal.privacy.responsible')}:</strong> Max Riss</p>
+                <p><strong>{t('legal.imprint.address')}:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
+                <p><strong>{t('legal.imprint.phone')}:</strong> 01573 3360210</p>
+                <p><strong>{t('legal.imprint.email')}:</strong> mr.ink.nt@gmail.com</p>
               </div>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>3. Data Collection</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.dataCollection')}</h2>
               <div className="space-y-3">
                 <div>
-                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Contact Forms</h3>
+                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.contactForms')}</h3>
                   <p className="text-sm">
-                    When you submit our contact form, we collect your name, surname, 
-                    and message content. This data is used solely to respond to your 
-                    inquiry and is stored securely.
+                    {t('legal.privacy.contactFormsText')}
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Cookies</h3>
+                  <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.cookies')}</h3>
                   <p className="text-sm">
-                    Our website uses cookies to improve user experience. You can configure your browser to 
-                    refuse cookies or to alert you when cookies are being sent.
+                    {t('legal.privacy.cookiesText')}
                   </p>
                 </div>
               </div>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>4. Your Rights under GDPR</h2>
-              <p className="text-sm">You have rights to information, correction, deletion, data portability, and to object to processing.</p>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.yourRights')}</h2>
+              <p className="text-sm mb-3">{t('legal.privacy.rightsText')}</p>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightInfo')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightInfoText')}</p>
+                </div>
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightCorrection')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightCorrectionText')}</p>
+                </div>
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightDeletion')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightDeletionText')}</p>
+                </div>
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightRestriction')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightRestrictionText')}</p>
+                </div>
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightPortability')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightPortabilityText')}</p>
+                </div>
+                <div>
+                  <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightObjection')}:</strong>
+                  <p className="ml-4">{t('legal.privacy.rightObjectionText')}</p>
+                </div>
+              </div>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>5. Contact</h2>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.dataStorage')}</h2>
               <p className="text-sm">
-                If you have any questions about this privacy policy, 
-                please contact us at info@mrink-studio.de.
+                {t('legal.privacy.dataStorageText')}
+              </p>
+            </section>
+            <section>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.contact')}</h2>
+              <p className="text-sm">
+                {t('legal.privacy.contactText')}
               </p>
             </section>
           </div>

@@ -1,23 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
-    description: ""
+    description: "",
+    recipient: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Set recipient based on URL parameter
+  useEffect(() => {
+    const recipientParam = searchParams.get('recipient');
+    if (recipientParam === 'mrssteel') {
+      setFormData(prev => ({ ...prev, recipient: 'mrssteel' }));
+    } else if (recipientParam === 'mrink') {
+      setFormData(prev => ({ ...prev, recipient: 'mrink' }));
+    } else {
+      setFormData(prev => ({ ...prev, recipient: 'mrink' }));
+    }
+  }, [searchParams]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -49,7 +65,8 @@ const Contact = () => {
         description: t('contact.form.thankYou'),
       });
       
-      setFormData({ name: "", surname: "", description: "" });
+      const currentRecipient = formData.recipient;
+      setFormData({ name: "", surname: "", description: "", recipient: currentRecipient });
       setErrors({});
     }
   };
@@ -104,6 +121,19 @@ const Contact = () => {
               </div>
               
               <div>
+                <Label htmlFor="recipient">{t('contact.form.recipient')} *</Label>
+                <Select value={formData.recipient} onValueChange={(value) => handleChange("recipient", value)}>
+                  <SelectTrigger id="recipient">
+                    <SelectValue placeholder={t('contact.form.selectRecipient')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="mrink">Max Riss - Tattoo (mr.ink.nt@gmail.com)</SelectItem>
+                    <SelectItem value="mrssteel">Mrs. Steel - Piercing (mrs.steel.111@gmail.com)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <div>
                 <Label htmlFor="description">{t('contact.form.description')} *</Label>
                 <Textarea
                   id="description"
@@ -125,27 +155,52 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.owner')}</h2>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-accent">Max Riss</h3>
-                <Separator className="bg-accent" />
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-accent" />
-                    <span className="text-muted-foreground">01573 3360210</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-accent" />
-                    <span className="text-muted-foreground">info@mrink-studio.de</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-accent" />
-                    <span className="text-muted-foreground">Neuffener Str. 66, 72622 Nürtingen</span>
+            {/* Contact Cards Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="p-8">
+                <h2 className="text-2xl font-bold mb-6 text-accent">Tattoo</h2>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-accent">Max</h3>
+                  <Separator className="bg-accent" />
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">01573 3360210</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Mail className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">mr.ink.nt@gmail.com</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">Neuffener Str. 66, 72622 Nürtingen</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+
+              <Card className="p-8">
+                <h2 className="text-2xl font-bold mb-6 text-accent">Piercings</h2>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-accent">Selina</h3>
+                  <Separator className="bg-accent" />
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">0157 52047349</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Mail className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">mrs.steel.111@gmail.com</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-5 h-5 text-accent" />
+                      <span className="text-muted-foreground">Neuffener Str. 66, 72622 Nürtingen</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
 
             <Card className="p-8">
               <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.hours.title')}</h2>
