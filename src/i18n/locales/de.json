@@ -12,7 +12,12 @@
       "subtitle": "Wir bringen deine Ideen zum Leben mit individuellen Tattoos und professionellen Piercings. Lass uns gemeinsam etwas Einzigartiges schaffen!",
       "cta": "Termin buchen"
     },
-    "studioTitle": "Unser Studio"
+    "studioTitle": "Unser Studio",
+    "cta": {
+      "title": "Bereit für ein neues Tattoo?",
+      "subtitle": "Vereinbaren Sie einen Termin für eine persönliche Beratung",
+      "button": "Termin buchen"
+    }
   },
   "pircing": {
     "title": "Mrs. Steel - Piercing Spezialistin",
@@ -63,9 +68,9 @@
   "team": {
     "title": "Unser Team",
     "subtitle": "Treffen Sie die talentierten Künstler hinter Mr. Ink Tattoo",
-    "maxRole": "Über Mr. Ink",
+    "maxRole": "Mr. Ink",
     "maxBio": "Max ist der Inhaber von Mr. Ink Tattoo in Nürtingen. Mit seinem Gespür für aktuelle Trends und einem Auge für Ästhetik kreiert er individuelle Tattoos – ob klassisches Motiv oder moderner Stil. Seine Präzision und Leidenschaft für maßgeschneiderte Kunstwerke zeichnen seine Arbeit aus. Neben dem Studio ist Max ein Familienmensch.",
-    "selinaRole": "Mrs. Steel - Piercing Spezialistin",
+    "selinaRole": "Mrs. Steel",
     "selinaBio": "Selina ist für alle Piercings bei Mr. Ink Tattoo zuständig. Mit fundierter Ausbildung in Anatomie und Hygiene sorgt sie für sichere und schöne Ergebnisse."
   },
   "contact": {
