@@ -15,6 +15,7 @@ const Header = () => {
   const location = useLocation();
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const isPricingPage = location.pathname === "/pircing";
 
   const navItems = [
@@ -27,6 +28,22 @@ const Header = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+  };
+
+  const handleMenuClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsClosing(false);
+    }, 400);
+  };
+
+  const handleMenuToggle = () => {
+    if (isMenuOpen) {
+      handleMenuClose();
+    } else {
+      setIsMenuOpen(true);
+    }
   };
 
   return (
@@ -109,82 +126,88 @@ const Header = () => {
             variant="ghost"
             size="icon"
             className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={handleMenuToggle}
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </Button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className={`md:hidden py-4 border-t ${
-            isPricingPage ? "border-golden-foreground/20" : "border-border"
-          }`}>
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`block py-2 text-base font-medium transition-colors ${
-                  isPricingPage
-                    ? `hover:text-golden-foreground ${
-                        location.pathname === item.path
-                          ? "text-golden-foreground"
-                          : "text-golden-foreground/70"
-                      }`
-                    : `hover:text-accent ${
-                        location.pathname === item.path
-                          ? "text-accent"
-                          : "text-muted-foreground"
-                      }`
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            
-            {/* Mobile Language Switcher */}
-            <div className="pt-2 mt-2 border-t border-border flex gap-2">
-              <button
-                onClick={() => {
-                  changeLanguage('de');
-                  setIsMenuOpen(false);
-                }}
-                className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
-                  i18n.language === 'de' 
-                    ? 'border-accent bg-accent/10' 
-                    : 'border-accent/30 hover:border-accent hover:bg-accent/5'
-                }`}
-              >
-                <img 
-                  src="/flags/germany.webp" 
-                  alt="Deutsche Flagge"
-                  className="w-5 h-5 object-cover rounded-sm"
-                />
-                Deutsch
-              </button>
-              <button
-                onClick={() => {
-                  changeLanguage('en');
-                  setIsMenuOpen(false);
-                }}
-                className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
-                  i18n.language === 'en' 
-                    ? 'border-accent bg-accent/10' 
-                    : 'border-accent/30 hover:border-accent hover:bg-accent/5'
-                }`}
-              >
-                <img 
-                  src="/flags/united-kingdom.webp" 
-                  alt="English Flag"
-                  className="w-5 h-5 object-cover rounded-sm"
-                />
-                English
-              </button>
-            </div>
-          </nav>
-        )}
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <nav className={`md:hidden absolute left-0 right-0 top-16 py-4 border-t backdrop-blur-md shadow-lg transition-all duration-500 ease-out ${
+          isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0 animate-in slide-in-from-top'
+        } ${
+          isPricingPage 
+            ? "bg-golden border-golden-foreground/20" 
+            : "bg-background border-border"
+        }`}>
+          <div className="container mx-auto px-4">
+            {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`block py-2 text-base font-medium transition-colors ${
+                isPricingPage
+                  ? `hover:text-golden-foreground ${
+                      location.pathname === item.path
+                        ? "text-golden-foreground"
+                        : "text-golden-foreground/70"
+                    }`
+                  : `hover:text-accent ${
+                      location.pathname === item.path
+                        ? "text-accent"
+                        : "text-muted-foreground"
+                    }`
+              }`}
+              onClick={handleMenuClose}
+            >
+              {item.name}
+            </Link>
+          ))}
+          
+          {/* Mobile Language Switcher */}
+          <div className="pt-2 mt-2 border-t border-border flex gap-2">
+            <button
+              onClick={() => {
+                changeLanguage('de');
+                handleMenuClose();
+              }}
+              className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
+                i18n.language === 'de' 
+                  ? 'border-accent bg-accent/10' 
+                  : 'border-accent/30 hover:border-accent hover:bg-accent/5'
+              }`}
+            >
+              <img 
+                src="/flags/germany.webp" 
+                alt="Deutsche Flagge"
+                className="w-5 h-5 object-cover rounded-sm"
+              />
+              Deutsch
+            </button>
+            <button
+              onClick={() => {
+                changeLanguage('en');
+                handleMenuClose();
+              }}
+              className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
+                i18n.language === 'en' 
+                  ? 'border-accent bg-accent/10' 
+                  : 'border-accent/30 hover:border-accent hover:bg-accent/5'
+              }`}
+            >
+              <img 
+                src="/flags/united-kingdom.webp" 
+                alt="English Flag"
+                className="w-5 h-5 object-cover rounded-sm"
+              />
+              English
+            </button>
+          </div>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };

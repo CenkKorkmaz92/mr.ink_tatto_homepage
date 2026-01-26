@@ -59,7 +59,7 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 lg:gap-32 items-center">
           {/* Artist Section */}
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-accent text-center">Über {t('team.maxRole')}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-accent text-center">{t('team.about')} {t('team.maxRole')}</h2>
             <div className="flex flex-col md:grid md:grid-cols-[auto_1px_1fr] gap-4 md:gap-6 items-start">
               <Card className="overflow-hidden mx-auto md:mx-0 w-full md:w-auto border border-accent/30">
                 <img

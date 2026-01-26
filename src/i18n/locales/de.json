@@ -24,8 +24,8 @@
     "intro": "Erleben Sie professionelle Piercing-Kunst mit höchsten Sicherheits- und Hygienestandards.",
     "about": {
       "title": "Über Mrs. Steel",
-      "description": "Selina ist Piercing-Spezialistin bei Mr. Ink Tattoo. Sie legt großen Wert auf individuelle Beratung und sorgt dafür, dass sich jeder Kunde wohl und sicher fühlt.",
-      "description2": "Mit fundierter Ausbildung in Piercing-Techniken und Anatomie berät Mrs. Steel kompetent zu allen Piercing-Wünschen. Von klassischen Ohrlöchern bis zu Körperpiercings – Qualität und Sicherheit stehen an erster Stelle."
+      "description": "Selina ist die Piercing-Spezialistin bei Mr. Ink Tattoo. Mit jahrelanger Erfahrung legt sie größten Wert auf Sicherheit und individuelle Beratung, damit sich jeder Kunde wohl und in besten Händen fühlt.",
+      "description2": "Mit umfassenden Kenntnissen in Piercing-Techniken und Hygiene berät Mrs. Steel kompetent zu allen Piercing-Wünschen. Von klassischen Ohrpiercings bis zu Body-Piercings – Qualität und Sicherheit stehen an erster Stelle."
     },
     "services": {
       "title": "Unsere Piercing Services",
@@ -67,10 +67,12 @@
   "team": {
     "title": "Unser Team",
     "subtitle": "Treffen Sie die talentierten Künstler hinter Mr. Ink Tattoo",
+    "about": "Über",
     "maxRole": "Mr. Ink",
     "maxBio": "Max ist der Inhaber von Mr. Ink Tattoo in Nürtingen. Mit seinem Gespür für aktuelle Trends und einem Auge für Ästhetik kreiert er individuelle Tattoos – ob klassisches Motiv oder moderner Stil. Seine Präzision und Leidenschaft für maßgeschneiderte Kunstwerke zeichnen seine Arbeit aus. Neben dem Studio ist Max ein Familienmensch.",
     "selinaRole": "Mrs. Steel",
-    "selinaBio": "Selina ist für alle Piercings bei Mr. Ink Tattoo zuständig. Mit fundierter Ausbildung in Anatomie und Hygiene sorgt sie für sichere und schöne Ergebnisse."
+    "selinaBio": "Selina ist die Piercing-Spezialistin bei Mr. Ink Tattoo. Mit jahrelanger Erfahrung und umfassenden Kenntnissen in Hygiene und Piercing-Techniken legt sie größten Wert auf Sicherheit und individuelle Beratung. Von klassischen Ohrpiercings bis hin zu Body-Piercings – Selina sorgt dafür, dass sich jeder Kunde wohl und in besten Händen fühlt. Ihre präzise Arbeitsweise und strikte Einhaltung höchster Hygienestandards machen jeden Besuch zu einem sicheren Erlebnis.",
+    "guestArtists": "Zusätzlich arbeiten Gast-Tätowierer im Studio, die eine Liege mieten und ihre eigenen Projekte umsetzen. So profitieren unsere Kunden von verschiedenen Stilen und Techniken unter einem Dach."
   },
   "contact": {
     "title": "Kontaktieren Sie uns",

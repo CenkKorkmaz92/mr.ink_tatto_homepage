@@ -80,6 +80,16 @@ const Team = () => {
             </Card>
           ))}
         </div>
+
+        {/* Guest Artists Section */}
+        <Card className="mt-16 p-8 bg-accent/5 border-accent/30">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{t('team.title')}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('team.guestArtists')}
+            </p>
+          </div>
+        </Card>
       </div>
     </div>
   );

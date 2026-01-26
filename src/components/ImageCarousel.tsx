@@ -54,31 +54,15 @@ const ImageCarousel = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover select-none"
+              onContextMenu={(e) => e.preventDefault()}
+              style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none' }}
+              draggable={false}
             />
             <div className="absolute inset-0 bg-black/30" />
           </div>
         ))}
       </div>
-
-      {/* Navigation Arrows */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent z-20"
-        onClick={goToPrevious}
-      >
-        <ChevronLeft size={24} />
-      </Button>
-      
-      <Button
-        variant="ghost"
-        size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent z-20"
-        onClick={goToNext}
-      >
-        <ChevronRight size={24} />
-      </Button>
 
       {/* Dots Indicator */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">

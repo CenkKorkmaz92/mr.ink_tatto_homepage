@@ -24,8 +24,8 @@
     "intro": "Experience professional piercing artistry with the highest safety and hygiene standards.",
     "about": {
       "title": "About Mrs. Steel",
-      "description": "Selina is the piercing specialist at Mr. Ink Tattoo. She values individual consultation and ensures every client feels comfortable and safe.",
-      "description2": "With comprehensive training in piercing techniques and anatomy, Mrs. Steel provides expert advice on all piercing requests. From classic ear piercings to body piercings – quality and safety come first."
+      "description": "Selina is the piercing specialist at Mr. Ink Tattoo. With years of experience, she places the highest priority on safety and individual consultation to ensure every client feels comfortable and in the best hands.",
+      "description2": "With extensive knowledge in piercing techniques and hygiene, Mrs. Steel provides expert advice on all piercing requests. From classic ear piercings to body piercings – quality and safety come first."
     },
     "services": {
       "title": "Our Piercing Services",
@@ -69,10 +69,12 @@
   "team": {
     "title": "Our Team",
     "subtitle": "Meet the talented artists behind Mr. Ink Tattoo",
+    "about": "About",
     "maxRole": "Mr. Ink",
     "maxBio": "Max is the owner of Mr. Ink Tattoo in Nürtingen. With his feel for current trends and an eye for aesthetics, he creates individual tattoos – whether classic motifs or modern styles. His precision and passion for custom artwork define his work. Outside the studio, Max is a family man.",
     "selinaRole": "Mrs. Steel - Piercing Specialist",
-    "selinaBio": "Selina handles all piercings at Mr. Ink Tattoo. With comprehensive training in anatomy and hygiene, she ensures safe and beautiful results."
+    "selinaBio": "Selina is the piercing specialist at Mr. Ink Tattoo. With years of experience and extensive knowledge in hygiene and piercing techniques, she places the highest priority on safety and individual consultation. From classic ear piercings to body piercings – Selina ensures every client feels comfortable and in the best hands. Her precise work and strict adherence to the highest hygiene standards make every visit a safe experience.",
+    "guestArtists": "Additionally, guest tattoo artists work in the studio, renting chairs to realize their own projects. This allows our clients to benefit from various styles and techniques under one roof."
   },
   "contact": {
     "title": "Contact Us",
