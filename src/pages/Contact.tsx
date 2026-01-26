@@ -213,7 +213,7 @@ const Contact = () => {
                 </div>
               </div>
               <Separator className="my-4 bg-accent" />
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {t('contact.hours.note')}
               </p>
             </Card>

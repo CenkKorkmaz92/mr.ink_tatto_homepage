@@ -105,7 +105,7 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
       </div>
 
       {/* Image Counter */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-accent text-sm bg-primary/80 px-3 py-1 rounded">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-accent text-base bg-primary/80 px-3 py-1 rounded">
         {currentIndex + 1} / {images.length}
       </div>
     </div>

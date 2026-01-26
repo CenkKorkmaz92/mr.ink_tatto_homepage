@@ -57,6 +57,7 @@
   "gallery": {
     "title": "Portfolio",
     "subtitle": "Explore our latest tattoo creations",
+    "clickToView": "Click to view",
     "all": "All",
     "blackAndGrey": "Black & Grey",
     "color": "Color",
@@ -68,7 +69,7 @@
   "team": {
     "title": "Our Team",
     "subtitle": "Meet the talented artists behind Mr. Ink Tattoo",
-    "maxRole": "About Mr. Ink",
+    "maxRole": "Mr. Ink",
     "maxBio": "Max is the owner of Mr. Ink Tattoo in Nürtingen. With his feel for current trends and an eye for aesthetics, he creates individual tattoos – whether classic motifs or modern styles. His precision and passion for custom artwork define his work. Outside the studio, Max is a family man.",
     "selinaRole": "Mrs. Steel - Piercing Specialist",
     "selinaBio": "Selina handles all piercings at Mr. Ink Tattoo. With comprehensive training in anatomy and hygiene, she ensures safe and beautiful results."
@@ -101,10 +102,10 @@
     "piercings": "Piercings",
     "hours": {
       "title": "Opening Hours",
-      "tuesday": "Tuesday - Friday: 11:00 - 19:00",
-      "saturday": "Saturday: 10:00 - 16:00",
-      "closed": "Monday & Sunday: Closed",
-      "note": "Appointments recommended. Walk-ins welcome based on availability."
+      "tuesday": "Tuesday - Saturday: By Appointment Only",
+      "saturday": "Monday & Sunday: Closed",
+      "closed": "",
+      "note": "We work exclusively by appointment. Please contact us to schedule your visit."
     },
     "expect": {
       "title": "What to Expect",

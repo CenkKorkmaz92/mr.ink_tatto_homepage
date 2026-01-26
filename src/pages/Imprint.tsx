@@ -103,7 +103,7 @@ const Imprint = () => {
             </section>
 
             <section className="pt-8 border-t border-border">
-              <p className="text-sm">
+              <p className="text-base">
                 Last updated: {new Date().toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 

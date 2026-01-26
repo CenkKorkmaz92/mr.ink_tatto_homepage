@@ -56,8 +56,7 @@
   },
   "gallery": {
     "title": "Portfolio",
-    "subtitle": "Entdecken Sie unsere neuesten Tattoo-Kreationen",
-    "all": "Alle",
+    "subtitle": "Entdecken Sie unsere neuesten Tattoo-Kreationen",    "clickToView": "Klicken zum Vergr\u00f6\u00dfern",    "all": "Alle",
     "blackAndGrey": "Schwarz & Grau",
     "color": "Farbig",
     "realism": "Realismus",
@@ -98,10 +97,10 @@
     "owner": "Studio-Inhaber",
     "hours": {
       "title": "Öffnungszeiten",
-      "tuesday": "Dienstag - Freitag: 11:00 - 19:00",
-      "saturday": "Samstag: 10:00 - 16:00",
-      "closed": "Montag & Sonntag: Geschlossen",
-      "note": "Termine werden empfohlen. Walk-ins nach Verfügbarkeit willkommen."
+      "tuesday": "Dienstag - Samstag: Nur nach Terminvereinbarung",
+      "saturday": "Montag & Sonntag: Geschlossen",
+      "closed": "",
+      "note": "Wir arbeiten ausschließlich nach Terminvereinbarung. Bitte kontaktieren Sie uns für einen Termin."
     },
     "expect": {
       "title": "Was Sie erwarten können",

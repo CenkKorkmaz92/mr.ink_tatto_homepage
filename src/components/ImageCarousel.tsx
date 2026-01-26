@@ -65,7 +65,7 @@ const ImageCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent z-20"
         onClick={goToPrevious}
       >
         <ChevronLeft size={24} />
@@ -74,14 +74,14 @@ const ImageCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/40 hover:bg-primary/60 text-accent z-20"
         onClick={goToNext}
       >
         <ChevronRight size={24} />
       </Button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {images.map((_, index) => (
           <button
             key={index}
@@ -94,7 +94,7 @@ const ImageCarousel = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
         <div className="text-center text-accent px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ textShadow: '0 0 10px rgba(40, 44, 52, 1), 0 0 20px rgba(40, 44, 52, 1), 0 0 30px rgba(40, 44, 52, 0.9), 0 0 40px rgba(40, 44, 52, 0.8), 3px 3px 6px rgba(40, 44, 52, 0.9), -3px -3px 6px rgba(40, 44, 52, 0.9), 3px -3px 6px rgba(40, 44, 52, 0.9), -3px 3px 6px rgba(40, 44, 52, 0.9)' }}>
             {t('hero.title').split(' bei ').length > 1 ? (

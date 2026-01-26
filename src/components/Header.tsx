@@ -124,7 +124,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block py-2 text-sm font-medium transition-colors ${
+                className={`block py-2 text-base font-medium transition-colors ${
                   isPricingPage
                     ? `hover:text-golden-foreground ${
                         location.pathname === item.path
@@ -150,7 +150,7 @@ const Header = () => {
                   changeLanguage('de');
                   setIsMenuOpen(false);
                 }}
-                className={`flex items-center gap-2 py-2 px-3 text-sm font-medium w-full rounded-lg border transition-all ${
+                className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
                   i18n.language === 'de' 
                     ? 'border-accent bg-accent/10' 
                     : 'border-accent/30 hover:border-accent hover:bg-accent/5'
@@ -168,7 +168,7 @@ const Header = () => {
                   changeLanguage('en');
                   setIsMenuOpen(false);
                 }}
-                className={`flex items-center gap-2 py-2 px-3 text-sm font-medium w-full rounded-lg border transition-all ${
+                className={`flex items-center gap-2 py-2 px-3 text-base font-medium w-full rounded-lg border transition-all ${
                   i18n.language === 'en' 
                     ? 'border-accent bg-accent/10' 
                     : 'border-accent/30 hover:border-accent hover:bg-accent/5'

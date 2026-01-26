@@ -7,7 +7,7 @@ import profileMrsSteel from "@/assets/mrs_steel_profile.webp";
 const teamMembers = [
   {
     id: 1,
-    name: "Max Riss",
+    name: "Max",
     role: "maxRole",
     image: profileMrInk,
     description: "maxBio",
@@ -67,11 +67,11 @@ const Team = () => {
                   </p>
                   
                   <div className="pt-4 space-y-2">
-                    <p className="text-sm font-semibold text-accent">Kontakt:</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-base font-semibold text-accent">Kontakt:</p>
+                    <p className="text-base text-muted-foreground">
                       <strong>Telefon:</strong> {member.phone}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-base text-muted-foreground">
                       <strong>E-Mail:</strong> {member.email}
                     </p>
                   </div>

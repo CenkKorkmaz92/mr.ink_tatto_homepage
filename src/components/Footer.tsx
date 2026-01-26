@@ -30,7 +30,7 @@ const Footer = () => {
           </Link>
 
           {/* Legal Links */}
-          <div className="flex items-center space-x-6 text-sm">
+          <div className="flex items-center space-x-6 text-base">
             <button 
               onClick={() => setImprintOpen(true)}
               className="text-muted-foreground hover:text-accent transition-colors cursor-pointer"
@@ -89,9 +89,9 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 pt-6 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="mt-6 pt-6 border-t border-border text-center text-base text-muted-foreground">
           <p>© 2026 Mr. Ink Tattoo. {t('footer.rights')}</p>
-          <p className="mt-2 text-xs opacity-70">
+          <p className="mt-2 text-base opacity-70">
             Design & Development by Cenk Korkmaz & Philipp Schoenborn
           </p>
         </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           <div className={`space-y-6 ${isPricingPage ? '' : 'text-muted-foreground'}`} style={isPricingPage ? { color: '#282c34' } : {}}>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.businessInfo')}</h2>
-              <div className="space-y-1 text-sm">
+              <div className="space-y-1 text-base">
                 <p><strong>{t('legal.imprint.company')}:</strong> Mr. Ink Tattoo</p>
                 <p><strong>{t('legal.imprint.owner')}:</strong> Max Riss</p>
                 <p><strong>{t('legal.imprint.address')}:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
@@ -121,7 +121,7 @@ const Footer = () => {
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.responsible')}</h2>
-              <p className="text-sm">
+              <p className="text-base">
                 {t('legal.imprint.responsibleText')}
               </p>
             </section>
@@ -130,13 +130,13 @@ const Footer = () => {
               <div className="space-y-3">
                 <div>
                   <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.liabilityContent')}</h3>
-                  <p className="text-sm">
+                  <p className="text-base">
                     {t('legal.imprint.liabilityContentText')}
                   </p>
                 </div>
                 <div>
                   <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.liabilityLinks')}</h3>
-                  <p className="text-sm">
+                  <p className="text-base">
                     {t('legal.imprint.liabilityLinksText')}
                   </p>
                 </div>
@@ -144,7 +144,7 @@ const Footer = () => {
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.copyright')}</h2>
-              <p className="text-sm">
+              <p className="text-base">
                 {t('legal.imprint.copyrightText')}
               </p>
             </section>
@@ -166,14 +166,14 @@ const Footer = () => {
           <div className={`space-y-6 ${isPricingPage ? '' : 'text-muted-foreground'}`} style={isPricingPage ? { color: '#282c34' } : {}}>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.overview')}</h2>
-              <p className="text-sm">
+              <p className="text-base">
                 {t('legal.privacy.overviewText')}
               </p>
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.controller')}</h2>
-              <p className="text-sm mb-2">{t('legal.privacy.controllerText')}</p>
-              <div className="space-y-1 text-sm">
+              <p className="text-base mb-2">{t('legal.privacy.controllerText')}</p>
+              <div className="space-y-1 text-base">
                 <p><strong>{t('legal.privacy.responsible')}:</strong> Max Riss</p>
                 <p><strong>{t('legal.imprint.address')}:</strong> Neuffener Str. 66, 72622 Nürtingen, Germany</p>
                 <p><strong>{t('legal.imprint.phone')}:</strong> 01573 3360210</p>
@@ -185,13 +185,13 @@ const Footer = () => {
               <div className="space-y-3">
                 <div>
                   <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.contactForms')}</h3>
-                  <p className="text-sm">
+                  <p className="text-base">
                     {t('legal.privacy.contactFormsText')}
                   </p>
                 </div>
                 <div>
                   <h3 className="text-base font-semibold mb-2 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.cookies')}</h3>
-                  <p className="text-sm">
+                  <p className="text-base">
                     {t('legal.privacy.cookiesText')}
                   </p>
                 </div>
@@ -199,8 +199,8 @@ const Footer = () => {
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.yourRights')}</h2>
-              <p className="text-sm mb-3">{t('legal.privacy.rightsText')}</p>
-              <div className="space-y-2 text-sm">
+              <p className="text-base mb-3">{t('legal.privacy.rightsText')}</p>
+              <div className="space-y-2 text-base">
                 <div>
                   <strong className="text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.rightInfo')}:</strong>
                   <p className="ml-4">{t('legal.privacy.rightInfoText')}</p>
@@ -229,13 +229,13 @@ const Footer = () => {
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.dataStorage')}</h2>
-              <p className="text-sm">
+              <p className="text-base">
                 {t('legal.privacy.dataStorageText')}
               </p>
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.privacy.contact')}</h2>
-              <p className="text-sm">
+              <p className="text-base">
                 {t('legal.privacy.contactText')}
               </p>
             </section>
