@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="mt-6 pt-6 border-t border-border text-center text-base text-muted-foreground">
           <p>© 2026 Mr. Ink Tattoo. {t('footer.rights')}</p>
           <p className="mt-2 text-base opacity-70">
-            Design & Development by Cenk Korkmaz & Philipp Schoenborn
+            Design & Development by Cenk Korkmaz
           </p>
         </div>
       </div>
@@ -123,6 +123,13 @@ const Footer = () => {
               <p className="text-base">
                 {t('legal.imprint.responsibleText')}
               </p>
+            </section>
+            <section>
+              <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>Website</h2>
+              <div className="space-y-1 text-base">
+                <p><strong>Design & Development:</strong> Cenk Korkmaz</p>
+                <p><strong>Hosting & Deployment:</strong> Philipp Schoenborn</p>
+              </div>
             </section>
             <section>
               <h2 className="text-xl font-semibold mb-3 text-accent" style={isPricingPage ? { color: '#282c34' } : {}}>{t('legal.imprint.disclaimer')}</h2>
