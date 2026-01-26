@@ -2,6 +2,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
+/**
+ * Main layout wrapper component with header and footer
+ * Handles theme switching for pricing page
+ */
 const Layout = () => {
   const location = useLocation();
   const isPricingPage = location.pathname === "/pircing";

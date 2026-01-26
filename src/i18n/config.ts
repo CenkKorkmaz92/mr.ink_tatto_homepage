@@ -3,6 +3,10 @@ import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import de from './locales/de.json';
 
+/**
+ * i18n configuration for multilingual support
+ * Supports German (default) and English with fallback
+ */
 i18n
   .use(initReactI18next)
   .init({

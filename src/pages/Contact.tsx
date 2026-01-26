@@ -11,6 +11,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+/**
+ * Contact page with message form, business hours, and location details
+ * Features form validation and recipient selection (Max or Selina)
+ */
 const Contact = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
@@ -23,7 +27,6 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Set recipient based on URL parameter
   useEffect(() => {
     const recipientParam = searchParams.get('recipient');
     if (recipientParam === 'mrssteel') {
@@ -35,6 +38,10 @@ const Contact = () => {
     }
   }, [searchParams]);
 
+  /**
+   * Validates form fields before submission
+   * @returns true if all fields are valid, false otherwise
+   */
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
@@ -89,7 +96,6 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <Card className="p-8">
             <h2 className="text-2xl font-bold mb-6 text-accent">{t('contact.form.sendMessage')}</h2>
             <form onSubmit={handleSubmit} className="space-y-6">

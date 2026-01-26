@@ -1,16 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
-import { Menu, X, Languages } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.jpg";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 
+const MENU_CLOSE_DELAY = 400;
+
+/**
+ * Main navigation header with mobile menu and language switcher
+ * Features sticky positioning, backdrop blur, and responsive design
+ */
 const Header = () => {
   const location = useLocation();
   const { t, i18n } = useTranslation();
@@ -30,12 +30,16 @@ const Header = () => {
     i18n.changeLanguage(lng);
   };
 
+  /**
+   * Handles menu close animation with delay
+   * Allows smooth slide-up transition before unmounting
+   */
   const handleMenuClose = () => {
     setIsClosing(true);
     setTimeout(() => {
       setIsMenuOpen(false);
       setIsClosing(false);
-    }, 400);
+    }, MENU_CLOSE_DELAY);
   };
 
   const handleMenuToggle = () => {
@@ -54,7 +58,6 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
               src={logo} 
@@ -70,7 +73,6 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
@@ -99,7 +101,6 @@ const Header = () => {
               </Link>
             ))}
             
-            {/* Language Switcher */}
             <div className="flex items-center space-x-2">
               <Button 
                 variant="ghost" 
@@ -121,7 +122,6 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -133,7 +133,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <nav className={`md:hidden absolute left-0 right-0 top-16 py-4 border-t backdrop-blur-md shadow-lg transition-all duration-500 ease-out ${
           isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0 animate-in slide-in-from-top'
@@ -166,7 +165,6 @@ const Header = () => {
             </Link>
           ))}
           
-          {/* Mobile Language Switcher */}
           <div className="pt-2 mt-2 border-t border-border flex gap-2">
             <button
               onClick={() => {

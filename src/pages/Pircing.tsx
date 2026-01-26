@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ImageCarousel from "@/components/ImageCarousel";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import profileMrsSteel from "@/assets/mrs_steel_profile.webp";
@@ -12,21 +13,48 @@ import portfolioMrsSteel from "@/assets/portfolio_mrs_steel.webp";
 import pircingStandard1 from "@/assets/pircing_standart_1.webp";
 import pircingStandard2 from "@/assets/pircing_standart_2.webp";
 
-const galleryImages: { src: string; alt: string }[] = [];
+const PIERCING_GALLERY_COUNT = 31;
+const PIERCING_GALLERY_PATH = '/piercing-gallery/';
 
-const studioImages = [
+/**
+ * Loads piercing gallery images from public/piercing-gallery folder
+ * Currently loading 31 piercing images
+ */
+const loadPiercingGallery = () => {
+  if (PIERCING_GALLERY_COUNT === 0) return [];
+  const imageFiles = Array.from({ length: PIERCING_GALLERY_COUNT }, (_, i) => 
+    `piercing_${String(i + 1).padStart(3, '0')}.webp`
+  );
+  return imageFiles.map((filename) => ({
+    src: `${PIERCING_GALLERY_PATH}${filename}`,
+    alt: `Piercing ${filename}`
+  }));
+};
+
+const PIERCING_IMAGES = loadPiercingGallery();
+
+const STUDIO_IMAGES = [
   { src: pircingStandard1, alt: "Studio Piercing Area 1" },
   { src: pircingStandard2, alt: "Studio Piercing Area 2" },
 ];
 
+/**
+ * Piercing services page featuring Mrs. Steel
+ * Displays piercing services, portfolio, and studio standards
+ */
 const Pircing = () => {
   const { t } = useTranslation();
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isPortfolioGridOpen, setIsPortfolioGridOpen] = useState(false);
 
   const openGallery = (index: number = 0) => {
     setCurrentImageIndex(index);
     setIsGalleryOpen(true);
+  };
+
+  const openPortfolioGrid = () => {
+    setIsPortfolioGridOpen(true);
   };
 
   return (
@@ -123,7 +151,7 @@ const Pircing = () => {
           <div className="relative mx-auto md:mx-0 w-fit flex flex-col justify-between min-h-[400px] md:min-h-full">
             <Separator className="bg-golden-foreground" />
             <Card className="overflow-hidden my-6 md:my-auto border border-golden-foreground/30 bg-golden-card">
-              <div className="relative cursor-pointer group" onClick={() => openGallery()}>
+              <div className="relative cursor-pointer group" onClick={openPortfolioGrid}>
                 <img
                   src={portfolioMrsSteel}
                   alt="Piercing Portfolio"
@@ -151,7 +179,7 @@ const Pircing = () => {
             <p className="text-xl text-golden-foreground/80 max-w-2xl mx-auto">{t('pircing.standards.subtitle')}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {studioImages.map((image, index) => (
+            {STUDIO_IMAGES.map((image, index) => (
               <Card key={index} className="overflow-hidden bg-golden-card h-[400px] md:h-[500px]">
                 <img
                   src={image.src}
@@ -181,14 +209,38 @@ const Pircing = () => {
         </div>
       </div>
 
-      {/* Gallery Lightbox */}
       <GalleryLightbox
-        images={galleryImages}
+        images={PIERCING_IMAGES}
         isOpen={isGalleryOpen}
         currentIndex={currentImageIndex}
         onClose={() => setIsGalleryOpen(false)}
         onNavigate={setCurrentImageIndex}
       />
+
+      <Dialog open={isPortfolioGridOpen} onOpenChange={setIsPortfolioGridOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] overflow-y-auto bg-golden-card border-2 border-muted-foreground/30" closeButtonClassName="text-golden-foreground/70 hover:text-golden-foreground border border-muted-foreground/30 rounded-md">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold" style={{ color: '#282c34' }}>{t('pircing.portfolio')}</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+            {PIERCING_IMAGES.map((image, index) => (
+              <Card 
+                key={index}
+                className="overflow-hidden group transition-all duration-300 bg-golden-card"
+                style={{ border: '4px solid #282c34' }}
+              >
+                <div className="relative aspect-square">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

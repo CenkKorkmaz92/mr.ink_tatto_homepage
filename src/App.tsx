@@ -16,6 +16,10 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+/**
+ * Main application component with routing and providers
+ * Sets up React Query, tooltips, toasts, and defines all routes
+ */
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

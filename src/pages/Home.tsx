@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ImageCarousel from "@/components/ImageCarousel";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import profileMrInk from "@/assets/profile_mrInk.webp";
@@ -11,21 +12,39 @@ import galleryPreview from "@/assets/gallery-preview.jpg";
 import roomtourMax1 from "@/assets/roomtour_max_1.webp";
 import roomtourMax2 from "@/assets/roomtour_max_2.webp";
 
-// Portfolio videos for the gallery preview carousel
-const portfolioVideos = [
+const PORTFOLIO_VIDEOS = [
   "/portfolio_video_1.mp4",
   "/portfolio_video_2.mp4",
   "/portfolio_video_3.mp4"
 ];
 
-// Sample gallery images - you can replace these with actual tattoo images
-const galleryImages: { src: string; alt: string }[] = [];
-
-const studioImages = [
+const STUDIO_IMAGES = [
   { src: roomtourMax1, alt: "Studio Room Tour 1" },
   { src: roomtourMax2, alt: "Studio Room Tour 2" },
 ];
 
+const TATTOO_GALLERY_COUNT = 63;
+const TATTOO_GALLERY_PATH = '/gallery/';
+
+/**
+ * Loads tattoo gallery images from public/gallery folder
+ */
+const loadTattooGallery = () => {
+  const imageFiles = Array.from({ length: TATTOO_GALLERY_COUNT }, (_, i) => 
+    `bild_${String(i + 1).padStart(3, '0')}.webp`
+  );
+  return imageFiles.map((filename) => ({
+    src: `${TATTOO_GALLERY_PATH}${filename}`,
+    alt: `Tattoo ${filename}`
+  }));
+};
+
+const GALLERY_IMAGES = loadTattooGallery();
+
+/**
+ * Landing page featuring hero carousel, artist profile, and studio showcase
+ * Includes interactive video portfolio and image galleries
+ */
 const Home = () => {
   const { t } = useTranslation();
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -33,10 +52,10 @@ const Home = () => {
   const [isStudioGalleryOpen, setIsStudioGalleryOpen] = useState(false);
   const [currentStudioImageIndex, setCurrentStudioImageIndex] = useState(0);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isPortfolioGridOpen, setIsPortfolioGridOpen] = useState(false);
 
-  // Auto-rotate portfolio videos when current video ends
   const handleVideoEnd = () => {
-    setCurrentVideoIndex((prev) => (prev + 1) % portfolioVideos.length);
+    setCurrentVideoIndex((prev) => (prev + 1) % PORTFOLIO_VIDEOS.length);
   };
 
   const openGallery = (index: number = 0) => {
@@ -51,13 +70,10 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Carousel */}
       <ImageCarousel />
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-8 md:py-16">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 lg:gap-32 items-center">
-          {/* Artist Section */}
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-accent text-center">{t('team.about')} {t('team.maxRole')}</h2>
             <div className="flex flex-col md:grid md:grid-cols-[auto_1px_1fr] gap-4 md:gap-6 items-start">
@@ -84,7 +100,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Gallery Preview */}
           <div className="relative mx-auto md:mx-0 w-fit flex flex-col justify-between min-h-[400px] md:min-h-full">
             <Separator className="bg-accent" />
             <Card className="overflow-hidden my-6 md:my-auto border border-accent/30">
@@ -99,9 +114,9 @@ const Home = () => {
                   className="w-auto h-[400px] md:h-[500px] object-cover select-none"
                   style={{ WebkitTouchCallout: 'none' }}
                 >
-                  <source src={portfolioVideos[currentVideoIndex]} type="video/mp4" />
+                  <source src={PORTFOLIO_VIDEOS[currentVideoIndex]} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center cursor-pointer" onClick={() => openGallery()}>
+                <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center cursor-pointer" onClick={() => setIsPortfolioGridOpen(true)}>
                   <Button variant="secondary" size="lg">
                     {t('gallery.title')}
                   </Button>
@@ -113,13 +128,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Studio Images */}
       <div className="bg-primary/50 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-accent">{t('home.studioTitle')}</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Studio Video */}
             <Card className="overflow-hidden border border-accent/30 rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-none">
               <video
                 autoPlay
@@ -136,7 +149,7 @@ const Home = () => {
               </video>
             </Card>
 
-            {studioImages.map((image, index) => (
+            {STUDIO_IMAGES.map((image, index) => (
               <Card 
                 key={index} 
                 className={`overflow-hidden cursor-pointer group hover:shadow-lg transition-shadow border border-accent/30 ${
@@ -157,7 +170,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Google Maps Section */}
       <div className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-accent">{t('contact.location')}</h2>
@@ -182,7 +194,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
       <div className="bg-primary/50 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto">
@@ -195,23 +206,52 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Gallery Lightbox */}
       <GalleryLightbox
-        images={galleryImages}
+        images={GALLERY_IMAGES}
         isOpen={isGalleryOpen}
         currentIndex={currentImageIndex}
         onClose={() => setIsGalleryOpen(false)}
         onNavigate={setCurrentImageIndex}
       />
 
-      {/* Studio Gallery Lightbox */}
       <GalleryLightbox
-        images={studioImages}
+        images={STUDIO_IMAGES}
         isOpen={isStudioGalleryOpen}
         currentIndex={currentStudioImageIndex}
         onClose={() => setIsStudioGalleryOpen(false)}
         onNavigate={setCurrentStudioImageIndex}
       />
+
+      <Dialog open={isPortfolioGridOpen} onOpenChange={setIsPortfolioGridOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] overflow-y-auto" closeButtonClassName="text-muted-foreground hover:text-foreground">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold text-accent">{t('gallery.title')}</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+            {GALLERY_IMAGES.map((image, index) => (
+              <Card 
+                key={index}
+                className="overflow-hidden group transition-all duration-300 border-2 border-accent"
+              >
+                <div className="relative aspect-square">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Card>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Button size="lg" asChild>
+              <Link to="/gallery">
+                {t('gallery.title')}
+              </Link>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

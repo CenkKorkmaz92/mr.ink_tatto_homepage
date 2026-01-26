@@ -15,6 +15,14 @@ interface GalleryLightboxProps {
   onNavigate: (index: number) => void;
 }
 
+/**
+ * Full-screen image lightbox with navigation and keyboard support
+ * @param images - Array of gallery images to display
+ * @param isOpen - Controls lightbox visibility
+ * @param currentIndex - Currently displayed image index
+ * @param onClose - Callback to close the lightbox
+ * @param onNavigate - Callback to navigate between images
+ */
 const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: GalleryLightboxProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -53,7 +61,6 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      {/* Close Button */}
       <Button
         variant="ghost"
         size="icon"
@@ -63,7 +70,6 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
         <X size={24} />
       </Button>
 
-      {/* Navigation Arrows */}
       {images.length > 1 && (
         <>
           <Button
@@ -92,7 +98,6 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
         </>
       )}
 
-      {/* Image */}
       <div 
         className="max-w-full max-h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
@@ -104,7 +109,6 @@ const GalleryLightbox = ({ images, isOpen, currentIndex, onClose, onNavigate }: 
         />
       </div>
 
-      {/* Image Counter */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-accent text-base bg-primary/80 px-3 py-1 rounded">
         {currentIndex + 1} / {images.length}
       </div>

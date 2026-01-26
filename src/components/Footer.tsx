@@ -6,6 +6,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
+/**
+ * Site footer with logo, legal links, social media, and copyright info
+ * Features responsive design and legal content dialogs
+ */
 const Footer = () => {
   const location = useLocation();
   const { t } = useTranslation();
@@ -17,7 +21,6 @@ const Footer = () => {
     <footer className="bg-primary border-t border-border">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
               src={logo} 
@@ -29,7 +32,6 @@ const Footer = () => {
             </span>
           </Link>
 
-          {/* Legal Links */}
           <div className="flex items-center space-x-6 text-base">
             <button 
               onClick={() => setImprintOpen(true)}
@@ -45,7 +47,6 @@ const Footer = () => {
             </button>
           </div>
 
-          {/* Social Media */}
           <div className="flex items-center space-x-2">
             <Button 
               variant="ghost" 
@@ -88,7 +89,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-6 pt-6 border-t border-border text-center text-base text-muted-foreground">
           <p>© 2026 Mr. Ink Tattoo. {t('footer.rights')}</p>
           <p className="mt-2 text-base opacity-70">
@@ -97,7 +97,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Imprint Dialog */}
       <Dialog open={imprintOpen} onOpenChange={setImprintOpen}>
         <DialogContent 
           className={`max-w-4xl max-h-[90vh] overflow-y-auto legal-modal ${isPricingPage ? 'bg-golden-card' : ''}`}

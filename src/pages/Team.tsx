@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import profileMrInk from "@/assets/profile_mrInk.webp";
 import profileMrsSteel from "@/assets/mrs_steel_profile.webp";
 
-const teamMembers = [
+const TEAM_MEMBERS = [
   {
     id: 1,
     name: "Max",
@@ -25,6 +25,10 @@ const teamMembers = [
   }
 ];
 
+/**
+ * Team page showcasing studio artists and guest artists
+ * Displays team members with bio, contact info, and guest artist information
+ */
 const Team = () => {
   const { t } = useTranslation();
   
@@ -39,10 +43,9 @@ const Team = () => {
         </div>
 
         <div className="space-y-16">
-          {teamMembers.map((member, index) => (
+          {TEAM_MEMBERS.map((member, index) => (
             <Card key={member.id} className="overflow-hidden">
               <div className="grid md:grid-cols-2 gap-8 p-8">
-                {/* Artist Image */}
                 <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                   <div className="aspect-[4/5] overflow-hidden rounded-lg">
                     <img
@@ -53,7 +56,6 @@ const Team = () => {
                   </div>
                 </div>
 
-                {/* Artist Info */}
                 <div className={`flex flex-col justify-center space-y-6 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
                   <div>
                     <h2 className="text-3xl font-bold text-accent mb-2">{member.name}</h2>
@@ -81,7 +83,6 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Guest Artists Section */}
         <Card className="mt-16 p-8 bg-accent/5 border-accent/30">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{t('team.title')}</h2>
